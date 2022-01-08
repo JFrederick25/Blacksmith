@@ -3,18 +3,32 @@
   <menu class="menu" [menu]="menu"></menu>
 
   <div class="appcomponent">
-    <div *ngIf="menu.selectedOption === 'game'">
+    <div *ngIf="menu.selected === 'game'">
       <game-option></game-option>
     </div>
-    <div *ngIf="menu.selectedOption === 'anvil'">
+    <div *ngIf="menu.selected === 'anvil'">
       <anvil></anvil>
     </div>
-    <div *ngIf="menu.selectedOption === 'forge'">forge</div>
-    <div *ngIf="menu.selectedOption === 'store'">store</div>
-    <div *ngIf="menu.selectedOption === 'map'">map</div>
-    <div *ngIf="menu.selectedOption === 'trader'">trader</div>
-    <div *ngIf="menu.selectedOption === 'crafting skills'">crafting skills</div>
-    <div *ngIf="menu.selectedOption === 'trading skills'">trading skills</div>
-    <div *ngIf="menu.selectedOption === 'magic skills'">magic skills</div>
+    <div *ngIf="menu.selected === 'forge'">
+      <forge></forge>
+    </div>
+    <div *ngIf="menu.selected === 'store'">
+      <store></store>
+    </div>
+    <div *ngIf="menu.selected === 'map'">
+      <map></map>
+    </div>
+    <div *ngIf="menu.selected === 'trader'">
+      <trader></trader>
+    </div>
+    <div *ngIf="menu.selected === 'crafting skills'">
+      <crafting-skills></crafting-skills>
+    </div>
+    <div *ngIf="menu.selected === 'trading skills'">
+      <trading-skills></trading-skills>
+    </div>
+    <div *ngIf="menu.selected === 'magic skills'">
+      <magic-skills></magic-skills>
+    </div>
   </div>
 </div>

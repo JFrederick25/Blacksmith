@@ -7,4 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class MenuComponent  {
   @Input() menu;
+
+  setBackground(option): string {
+    if (this.menu.selected === option) {
+      return 'gray';
+    }
+  }
 }
+

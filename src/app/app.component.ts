@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   menu = {
-    selectedOption: 'game',
+    selected: 'game',
     options: [
       'game',
-      'anvil',
       'forge',
+      'anvil',
       'store',
       'map',
       'trader',
