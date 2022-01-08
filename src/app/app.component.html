@@ -1,18 +1,18 @@
 <h1>Blacksmith</h1>
 <div style="display: flex;">
+  <menu class="menu" [menu]="menu"></menu>
 
-  <div class="options" style="border: 1px solid black;">
-    <p>anvil</p>
-    <p>forge</p>
-    <p>store</p>
-    <p>map</p>
-    <p>trader</p>
-    <p>crafting skills</p>
-    <p>trading skills</p>
-    <p>magic skills</p>
-  </div>
-
-  <div>
-    <p style="border-top: 1px solid black;">anvil tab
+  <div class="component">
+    <div *ngIf="menu.selectedOption === 'game'">
+      <game-option></game-option>
+    </div>
+    <div *ngIf="menu.selectedOption === 'anvil'">anvil</div>
+    <div *ngIf="menu.selectedOption === 'forge'">forge</div>
+    <div *ngIf="menu.selectedOption === 'store'">store</div>
+    <div *ngIf="menu.selectedOption === 'map'">map</div>
+    <div *ngIf="menu.selectedOption === 'trader'">trader</div>
+    <div *ngIf="menu.selectedOption === 'crafting skills'">crafting skills</div>
+    <div *ngIf="menu.selectedOption === 'trading skills'">trading skills</div>
+    <div *ngIf="menu.selectedOption === 'magic skills'">magic skills</div>
   </div>
 </div>

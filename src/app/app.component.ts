@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +6,18 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ';
+  menu = {
+    selectedOption: 'game',
+    options: [
+      'game',
+      'anvil',
+      'forge',
+      'store',
+      'map',
+      'trader',
+      'crafting skills',
+      'trading skills',
+      'magic skills'
+    ]
+  }
 }

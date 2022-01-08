@@ -1,0 +1,16 @@
+.options {
+  margin-left: 10px;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 38rem;
+}
+
+.options > div {
+  padding: 20px;
+}
+
+.options > div:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}

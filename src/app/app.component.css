@@ -1,12 +1,13 @@
-p {
-  font-family: Lato;
-}
-
-p {
+.menu {
   margin: 0;
-  padding: 8px 8px;
+  padding: 0;
+  width: 30%;
 }
 
-.options> p:hover {
-  background-color: lightgray;
+.component {
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+  width: 60%;
+  height: 38rem;
 }
