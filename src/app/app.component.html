@@ -1,10 +1,13 @@
 <h1>Blacksmith Life</h1>
+<div>{{player | json}}</div>
+
 <div style="display: flex; background-color: rgb(224, 212, 188)">
+
   <menu class="menu" [menu]="menu"></menu>
 
   <div class="appcomponent">
     <div *ngIf="menu.selected === 'game'">
-      <game-option></game-option>
+      <game-option [player]="player"></game-option>
     </div>
     <div *ngIf="menu.selected === 'anvil'">
       <anvil></anvil>

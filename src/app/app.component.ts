@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { GameStateData } from '../data/gameStateData';
+import { PlayerData } from '../data/playerData';
+import { PlayerService } from '../services/playerService';
 
 @Component({
   selector: 'my-app',
@@ -19,5 +22,8 @@ export class AppComponent  {
       'trading skills',
       'magic skills'
     ]
-  }
+  };
+
+  player: PlayerData = new PlayerData();
+  gameState: GameStateData;
 }
