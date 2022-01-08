@@ -1,13 +1,15 @@
 .options {
+  padding-top: 10px;
   margin-left: 10px;
   border: 1px solid black;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  height: 38rem;
+  height: 37.4rem;
 }
 
 .options > div {
-  padding: 20px;
+  font-size: 22px;
+  padding: 19px 10px;
 }
 
 .options > div:hover {
