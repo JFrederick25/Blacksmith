@@ -1,1 +1,10 @@
 /* Add application styles & imports to this file! */
+
+
+.title {
+  font-size: 20.8px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 20px 10px;
+  background-color: gray;
+}

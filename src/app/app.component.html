@@ -1,12 +1,14 @@
-<h1>Blacksmith</h1>
-<div style="display: flex;">
+<h1>Blacksmith Life</h1>
+<div style="display: flex; background-color: rgb(224, 212, 188)">
   <menu class="menu" [menu]="menu"></menu>
 
-  <div class="component">
+  <div class="appcomponent">
     <div *ngIf="menu.selectedOption === 'game'">
       <game-option></game-option>
     </div>
-    <div *ngIf="menu.selectedOption === 'anvil'">anvil</div>
+    <div *ngIf="menu.selectedOption === 'anvil'">
+      <anvil></anvil>
+    </div>
     <div *ngIf="menu.selectedOption === 'forge'">forge</div>
     <div *ngIf="menu.selectedOption === 'store'">store</div>
     <div *ngIf="menu.selectedOption === 'map'">map</div>

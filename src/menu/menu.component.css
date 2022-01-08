@@ -1,6 +1,5 @@
 .options {
   padding-top: 10px;
-  margin-left: 10px;
   border: 1px solid black;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -8,8 +7,8 @@
 }
 
 .options > div {
-  font-size: 22px;
-  padding: 19px 10px;
+  font-size: 18px;
+  padding: 16px 10px;
 }
 
 .options > div:hover {

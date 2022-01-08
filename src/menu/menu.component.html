@@ -1,5 +1,5 @@
 <div class="options">
-  <div [style.background-color]="menu.selectedOption===option ? 'lightgray' : 'white'" *ngFor="let option of menu.options" (click)="menu.selectedOption=option">
+  <div [style.background-color]="menu.selectedOption===option ? 'gray' : 'rgb(224, 212, 188)'" *ngFor="let option of menu.options" (click)="menu.selectedOption=option">
     {{ option }}
   </div>
 </div>
