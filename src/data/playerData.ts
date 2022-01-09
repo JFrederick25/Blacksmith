@@ -1,5 +1,4 @@
-import { BuiltinMethod } from "@angular/compiler/src/compiler";
-import { BuildWeapon, Magic, PlayerMaterial, WeaponType } from "./gameData";
+import { BuildWeapon, Magic, PlayerMaterial, WeaponType } from "./gameInterfaces";
 
 export class PlayerData {
   money: number;

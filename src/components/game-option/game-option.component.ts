@@ -8,10 +8,12 @@ import { PlayerService } from '../../services/playerService';
   styleUrls: [ './game-option.component.css' ]
 })
 export class GameOptionComponent  {
-  @Input() player: PlayerData
+  @Input() player: PlayerData;
+
+  constructor(private playerService: PlayerService) {}
 
   newGame() {
-    this.player.money = 30;
+    this.playerService.resetPlayer();
   }
 
   saveGame() {

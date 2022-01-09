@@ -1,5 +1,6 @@
 <h1>Blacksmith Life</h1>
-<div>{{player | json}}</div>
+<div>Money: {{player.money}}</div>
+
 
 <div style="display: flex; background-color: rgb(224, 212, 188)">
 
@@ -9,11 +10,11 @@
     <div *ngIf="menu.selected === 'game'">
       <game-option [player]="player"></game-option>
     </div>
+    <div *ngIf="menu.selected === 'forge'">
+      <forge [player]="player"></forge>
+    </div>
     <div *ngIf="menu.selected === 'anvil'">
       <anvil></anvil>
-    </div>
-    <div *ngIf="menu.selected === 'forge'">
-      <forge></forge>
     </div>
     <div *ngIf="menu.selected === 'store'">
       <store></store>

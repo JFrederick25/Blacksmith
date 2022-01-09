@@ -2,6 +2,12 @@
 
 <div class="options">
   <p>Choose material</p>
+  <div *ngIf="player && player.materials">
+    <div class="materialOption" *ngFor="let material of player.materials">
+      {{material.name}}
+    </div>
+  </div>
+  
   <p>Choose weapon type</p>
   <p>choose magic</p>
 </div>

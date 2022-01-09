@@ -26,4 +26,8 @@ export class AppComponent  {
 
   player: PlayerData = new PlayerData();
   gameState: GameStateData;
+
+  constructor(private playerService: PlayerService) {
+    playerService.player = this.player;
+  }
 }

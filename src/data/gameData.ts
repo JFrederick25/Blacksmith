@@ -1,15 +1,19 @@
-export class PlayerMaterial {
+import { PlayerMaterial } from "./gameInterfaces";
+import { PlayerData } from "./playerData";
 
-}
+export const startingPlayerData = {
+  money: 30,
+  materials: [
+    new PlayerMaterial('wood'),
+    new PlayerMaterial('stone'),
+    new PlayerMaterial('bronze')
+  ],
+  weaponTypes: [
 
-export class WeaponType {
+  ],
+  magicList: [
 
-}
+  ],
+  buildWeapon: null
+};
 
-export class Magic {
-
-}
-
-export class BuildWeapon {
-
-}
