@@ -8,13 +8,13 @@ import { PlayerData } from '../../data/playerData';
   styleUrls: [ './forge.component.css' ]
 })
 export class ForgeComponent implements OnInit  {
-  @Input() player: PlayerData;
+  @Input() playerData: PlayerData;
   
   materials: PlayerMaterial[];
 
   ngOnInit() {
-    if (this.player) {
-      this.materials = this.player.materials;
+    if (this.playerData) {
+      this.materials = this.playerData.materials;
     }
   }
 }

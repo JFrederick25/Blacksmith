@@ -1,15 +1,18 @@
 <h1>Blacksmith Life</h1>
-<div>Money: {{ player.money }}</div>
+<div>Money: {{ playerData.money }}</div>
 
 <div style="display: flex; background-color: rgb(224, 212, 188)">
   <menu class="menu" [menu]="menu" [gameStateData]="gameStateData"></menu>
 
   <div class="appcomponent">
     <div *ngIf="menu.selected === 'game'">
-      <game-option [player]="player" [gameStateData]="gameStateData"></game-option>
+      <game-option
+        [playerData]="playerData"
+        [gameStateData]="gameStateData"
+      ></game-option>
     </div>
     <div *ngIf="menu.selected === 'forge'">
-      <forge [player]="player"></forge>
+      <forge [playerData]="playerData"></forge>
     </div>
     <div *ngIf="menu.selected === 'anvil'">
       <anvil></anvil>

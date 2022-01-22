@@ -2,8 +2,8 @@
 
 <div class="options">
   <p>Choose material</p>
-  <div *ngIf="player && player.materials">
-    <div class="materialOption" *ngFor="let material of player.materials">
+  <div *ngIf="playerData && playerData.materials">
+    <div class="materialOption" *ngFor="let material of playerData.materials">
       {{material.name}}
     </div>
   </div>

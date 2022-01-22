@@ -23,6 +23,6 @@ export class AppComponent  {
     ]
   };
 
-  player: PlayerData = new PlayerData();
+  playerData: PlayerData = new PlayerData();
   gameStateData: GameStateData = new GameStateData();
 }
