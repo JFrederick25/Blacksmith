@@ -4,12 +4,12 @@ export class PlayerMaterial {
   quantity: number;
   cost: number;
 
-  constructor(name: string) {
+  constructor(name: string, q?: number) {
     this.name = name;
     this.material = new Material();
     this.material.name = name;
     this.material.price = 3;
-    this.quantity = 0;
+    this.quantity = q || 0;
     this.cost = 9;
   }
 }

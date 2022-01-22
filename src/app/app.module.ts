@@ -13,6 +13,7 @@ import { TraderComponent } from '../components/trader/trader.component';
 import { CraftingSkillsComponent } from '../components/crafting-skills/crafting-skills.component';
 import { TradingSkillsComponent } from '../components/trading-skills/trading-skills.component';
 import { MagicSkillsComponent } from '../components/magic-skills/magic-skills.component';
+import { NpcComponent } from '../components/npc/npc.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -25,6 +26,7 @@ import { MagicSkillsComponent } from '../components/magic-skills/magic-skills.co
     StoreComponent,
     MapComponent,
     TraderComponent,
+    NpcComponent,
     CraftingSkillsComponent,
     TradingSkillsComponent,
     MagicSkillsComponent,

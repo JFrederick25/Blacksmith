@@ -8,7 +8,7 @@
       *ngFor="let material of playerData.materials"
       (click)="selectedMaterial = material"
     >
-      {{ material.name }}
+      {{ material.name }} - {{material.quantity}}
       <span *ngIf="material.name === selectedMaterial?.name"> + </span>
     </div>
   </div>

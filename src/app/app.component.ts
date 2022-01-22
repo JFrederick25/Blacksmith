@@ -17,6 +17,7 @@ export class AppComponent  {
       'store',
       'map',
       'trader',
+      'npc',
       'crafting skills',
       'trading skills',
       'magic skills'
