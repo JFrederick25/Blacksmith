@@ -14,4 +14,12 @@ export class PlayerData {
     this.magicList = [];
     this.buildWeapon = null;
   }
+
+  static setPlayerData(p: PlayerData, np: PlayerData) {
+    p.money = np.money;
+    p.materials = np.materials;
+    p.weaponTypes = np.weaponTypes;
+    p.magicList = np.magicList;
+    p.buildWeapon = np.buildWeapon;
+  }
 }

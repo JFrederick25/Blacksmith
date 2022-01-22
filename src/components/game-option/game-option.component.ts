@@ -12,12 +12,23 @@ export class GameOptionComponent {
   @Input() playerData: PlayerData;
   @Input() gameStateData: GameStateData;
 
+  tf = '';
+
   newGame() {
     GameData.resetPlayerData(this.playerData);
     this.gameStateData.gameLoaded = true;
   }
 
-  saveGame() {}
+  saveGame() {
+    let t = JSON.stringify(this.playerData);
+    t += '|' + JSON.stringify(this.gameStateData);
+    this.tf = btoa(t);
+  }
 
-  loadGame() {}
+  loadGame() {
+    const data = atob(this.tf).split('|');
+    PlayerData.setPlayerData(this.playerData, JSON.parse(data[0]));
+    GameStateData.setGameStateData(this.gameStateData, JSON.parse(data[1]));
+    this.tf = '';
+  }
 }
