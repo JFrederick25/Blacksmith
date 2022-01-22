@@ -1,7 +1,7 @@
 import { PlayerMaterial } from "./gameInterfaces";
 import { PlayerData } from "./playerData";
 
-export const startingPlayerData = {
+export const startingPlayerData: PlayerData = {
   money: 30,
   materials: [
     new PlayerMaterial('wood'),

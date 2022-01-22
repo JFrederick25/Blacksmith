@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { GameStateData } from '../data/gameStateData';
 import { PlayerData } from '../data/playerData';
-import { PlayerService } from '../services/playerService';
 
 @Component({
   selector: 'my-app',
@@ -25,9 +24,5 @@ export class AppComponent  {
   };
 
   player: PlayerData = new PlayerData();
-  gameState: GameStateData;
-
-  constructor(private playerService: PlayerService) {
-    playerService.player = this.player;
-  }
+  gameStateData: GameStateData = new GameStateData();
 }

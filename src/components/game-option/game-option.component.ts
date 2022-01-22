@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { GameStateData } from '../../data/gameStateData';
 import { PlayerData } from '../../data/playerData';
-import { PlayerService } from '../../services/playerService';
 
 @Component({
   selector: 'game-option',
@@ -9,11 +9,10 @@ import { PlayerService } from '../../services/playerService';
 })
 export class GameOptionComponent  {
   @Input() player: PlayerData;
-
-  constructor(private playerService: PlayerService) {}
+  @Input() gameStateData: GameStateData;
 
   newGame() {
-    this.playerService.resetPlayer();
+    this.gameStateData.gameLoaded = true;
   }
 
   saveGame() {

@@ -1,5 +1,9 @@
 <div class="menu-options">
-  <div [style.background-color]="setBackground(option)" *ngFor="let option of menu.options" (click)="menu.selected=option">
+  <div
+    [style.background-color]="setBackground(option)"
+    *ngFor="let option of applyMenu()"
+    (click)="menu.selected = option"
+  >
     {{ option }}
   </div>
 </div>
