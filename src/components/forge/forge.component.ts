@@ -11,6 +11,7 @@ export class ForgeComponent implements OnInit  {
   @Input() playerData: PlayerData;
   
   materials: PlayerMaterial[];
+  selectedMaterial: PlayerMaterial;
 
   ngOnInit() {
     if (this.playerData) {

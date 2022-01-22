@@ -1,6 +1,5 @@
 /* Add application styles & imports to this file! */
 
-
 .title {
   font-size: 20.8px;
   font-weight: bold;
@@ -11,4 +10,15 @@
 
 .options {
   padding: 0 20px;
+}
+
+button {
+  padding: 5px;
+  background-color: rgb(218, 194, 147);
+  font-family: copperplate, fantasy;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: aquamarine;
 }

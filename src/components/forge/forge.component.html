@@ -1,13 +1,26 @@
-<h3 class="title">Forge</h3>
+<p class="title">Forge</p>
 
 <div class="options">
   <p>Choose material</p>
   <div *ngIf="playerData && playerData.materials">
-    <div class="materialOption" *ngFor="let material of playerData.materials">
-      {{material.name}}
+    <div
+      class="materialOption selection"
+      *ngFor="let material of playerData.materials"
+      (click)="selectedMaterial = material"
+    >
+      {{ material.name }}
+      <span *ngIf="material.name === selectedMaterial?.name"> + </span>
     </div>
   </div>
-  
+
   <p>Choose weapon type</p>
   <p>choose magic</p>
+</div>
+
+<div *ngIf="selectedMaterial">
+  <p class="build">Weapon</p>
+  <div class="buildOption">
+    {{selectedMaterial.name}}
+  </div>
+  <button class="buildButton">Build Weapon</button>
 </div>

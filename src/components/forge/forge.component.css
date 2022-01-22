@@ -1,3 +1,29 @@
 .materialOption {
   padding-left: 10px;
 }
+
+.selection {
+  cursor: pointer;
+  width: 120px;
+  padding-left: 20px;
+}
+
+.selection:hover {
+  background-color: aquamarine;
+}
+
+.build {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 10px 20px 10px;
+  margin: 0;
+}
+
+.buildOption {
+  padding: 5px 20px 5px;
+}
+
+.buildButton {
+  margin: 5px 10px 5px;
+}
