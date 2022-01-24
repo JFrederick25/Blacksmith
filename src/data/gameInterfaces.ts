@@ -17,7 +17,7 @@ export class PlayerMaterial {
 export class Material {
   name: string;
   baseType: string;
-  rank: number;
+  craftingRank: number;
   price: number;
 }
 

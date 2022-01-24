@@ -3,15 +3,23 @@
 <div class="options">
   <p>Choose material</p>
   <div class="forgeSel" *ngIf="playerData && playerData.materials">
+    <!-- <tr>
+      <td class="Column">Name</td>
+      <td class="Column">Quantity</td>
+      <td class="Column">Value</td>
+      <td class="Column"></td>
+    </tr> -->
     <tr
       class="materialOption selection"
       *ngFor="let material of playerData.materials"
       (click)="setSelectedMaterial(material)"
     >
-      <td class="nameCol">{{ material.name }}</td>
-      <td class="qCol">({{ material.quantity }})</td>
-      <td class="pCol" *ngIf="material.name === selectedMaterial?.name">+</td>
-      <td class="pCol" *ngIf="material.name !== selectedMaterial?.name"></td>
+      <td class="Column">{{ material.name }}</td>
+      <td class="Column">({{ material.quantity }})</td>
+      <td class="Column">${{ material.value }}</td>
+
+      <td *ngIf="material.name === selectedMaterial?.name">+</td>
+      <td *ngIf="material.name !== selectedMaterial?.name"></td>
     </tr>
   </div>
 

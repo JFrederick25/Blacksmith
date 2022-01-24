@@ -12,7 +12,7 @@
 }
 
 .forgeSel {
-  width: 50%;
+  width: 85%;
 }
 
 .build {
@@ -31,14 +31,6 @@
   margin: 5px 10px 5px;
 }
 
-.nameCol {
-  width: 15%;
-}
-
-.qCol {
-  width: 5%;
-}
-
-.pCol {
-  width: 5%;
+.Column {
+  width: 30%;
 }
