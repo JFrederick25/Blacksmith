@@ -4,12 +4,15 @@
 
 .selection {
   cursor: pointer;
-  width: 120px;
   padding-left: 20px;
 }
 
 .selection:hover {
   background-color: aquamarine;
+}
+
+.forgeSel {
+  width: 50%;
 }
 
 .build {
@@ -26,4 +29,16 @@
 
 .buildButton {
   margin: 5px 10px 5px;
+}
+
+.nameCol {
+  width: 15%;
+}
+
+.qCol {
+  width: 5%;
+}
+
+.pCol {
+  width: 5%;
 }

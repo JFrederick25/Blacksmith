@@ -2,15 +2,17 @@
 
 <div class="options">
   <p>Choose material</p>
-  <div *ngIf="playerData && playerData.materials">
-    <div
+  <div class="forgeSel" *ngIf="playerData && playerData.materials">
+    <tr
       class="materialOption selection"
       *ngFor="let material of playerData.materials"
-      (click)="selectedMaterial = material"
+      (click)="setSelectedMaterial(material)"
     >
-      {{ material.name }} - {{material.quantity}}
-      <span *ngIf="material.name === selectedMaterial?.name"> + </span>
-    </div>
+      <td class="nameCol">{{ material.name }}</td>
+      <td class="qCol">({{ material.quantity }})</td>
+      <td class="pCol" *ngIf="material.name === selectedMaterial?.name">+</td>
+      <td class="pCol" *ngIf="material.name !== selectedMaterial?.name"></td>
+    </tr>
   </div>
 
   <p>Choose weapon type</p>
@@ -20,7 +22,7 @@
 <div *ngIf="selectedMaterial">
   <p class="build">Weapon</p>
   <div class="buildOption">
-    {{selectedMaterial.name}}
+    {{ selectedMaterial.name }}
   </div>
   <button class="buildButton">Build Weapon</button>
 </div>

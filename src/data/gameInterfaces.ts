@@ -2,20 +2,22 @@ export class PlayerMaterial {
   name: string;
   material: Material;
   quantity: number;
-  cost: number;
+  value: number;
 
-  constructor(name: string, q?: number) {
+  constructor(name: string, q?: number, p?: number) {
     this.name = name;
     this.material = new Material();
     this.material.name = name;
-    this.material.price = 3;
+    this.material.price = p || 0;
     this.quantity = q || 0;
-    this.cost = 9;
+    this.value = 0;
   }
 }
 
 export class Material {
   name: string;
+  baseType: string;
+  rank: number;
   price: number;
 }
 

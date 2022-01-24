@@ -18,4 +18,12 @@ export class ForgeComponent implements OnInit  {
       this.materials = this.playerData.materials;
     }
   }
+
+  setSelectedMaterial(material) {
+    if (this.selectedMaterial && this.selectedMaterial.name === material.name) {
+      this.selectedMaterial = null;
+    } else {
+      this.selectedMaterial = material;
+    }
+  }
 }
