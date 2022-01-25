@@ -12,6 +12,12 @@ export class GameOptionComponent {
   @Input() playerData: PlayerData;
   @Input() gameStateData: GameStateData;
 
+  x;
+  mover(opt) {
+    this.x = opt;
+
+  }
+
   tf = '';
 
   newGame() {

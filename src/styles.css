@@ -1,4 +1,7 @@
 /* Add application styles & imports to this file! */
+html {
+  max-width:700px;
+}
 
 .title {
   font-size: 20.8px;
