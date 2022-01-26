@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayerMaterial } from '../../data/gameInterfaces';
+import { PlayerMaterial, WeaponType } from '../../data/gameInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 @Component({
@@ -10,13 +10,11 @@ import { PlayerData } from '../../data/playerData';
 export class ForgeComponent implements OnInit  {
   @Input() playerData: PlayerData;
   
-  materials: PlayerMaterial[];
   selectedMaterial: PlayerMaterial;
+  selectedWeaponType: WeaponType;
 
   ngOnInit() {
-    if (this.playerData) {
-      this.materials = this.playerData.materials;
-    }
+
   }
 
   setSelectedMaterial(material) {
@@ -24,6 +22,14 @@ export class ForgeComponent implements OnInit  {
       this.selectedMaterial = null;
     } else {
       this.selectedMaterial = material;
+    }
+  }
+
+  setSelectedWeaponType(weaponType) {
+    if (this.selectedWeaponType && this.selectedWeaponType.name === weaponType.name) {
+      this.selectedWeaponType = null;
+    } else {
+      this.selectedWeaponType = weaponType;
     }
   }
 }

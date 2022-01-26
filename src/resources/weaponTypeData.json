@@ -1,4 +1,7 @@
-[
-  ["dagger", 1],
-  ["club", 1]
-]
+{
+  "weaponTypes": [
+    ["ID", "name", "value"],
+    [0, "dagger", 3],
+    [1, "club", 5]
+  ]
+}

@@ -1,18 +1,23 @@
-import { Material, PlayerMaterial } from './gameInterfaces';
+import { Material, PlayerMaterial, WeaponType } from './gameInterfaces';
 import { PlayerData } from './playerData';
 import * as materialGameData from '../resources/materialData.json';
+import * as weaponGameData from '../resources/weaponTypeData.json';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
+  static readonly weaponData = weaponGameData.weaponTypes;
 
   static resetPlayerData(p: PlayerData) {
     p.money = 30;
     p.materials = [
       GameData.setPMaterial('oak', 4),
       GameData.setPMaterial('slate', 3),
-      GameData.setPMaterial('hyperion_grain', 2),
+      GameData.setPMaterial('bronze', 2),
     ];
-    p.weaponTypes = [];
+    p.weaponTypes = [
+      GameData.findWeaponType('dagger'),
+      GameData.findWeaponType('club'),
+    ];
     p.magicList = [];
     p.buildWeapon = null;
   }
@@ -40,7 +45,14 @@ export class GameData {
     return null;
   }
 
-  static readonly weaponTypeData = [];
-
-  static readonly magicData = [];
+  static findWeaponType(name: string): WeaponType {
+    const wData = GameData.weaponData.find(x => x[1] === name);
+    if (wData) {
+      const w = new WeaponType();
+      w.name = wData[1] as string;
+      w.value = wData[2] as number;
+      return w;
+    }
+    return null;
+  }
 }

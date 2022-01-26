@@ -23,6 +23,7 @@ export class Material {
 
 export class WeaponType {
   name: string;
+  value: number;
 }
 
 export class Magic {

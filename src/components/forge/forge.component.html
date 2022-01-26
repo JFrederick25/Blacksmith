@@ -3,14 +3,8 @@
 <div class="options">
   <p>Choose material</p>
   <div class="forgeSel" *ngIf="playerData && playerData.materials">
-    <!-- <tr>
-      <td class="Column">Name</td>
-      <td class="Column">Quantity</td>
-      <td class="Column">Value</td>
-      <td class="Column"></td>
-    </tr> -->
     <tr
-      class="materialOption selection"
+      class="section selection"
       *ngFor="let material of playerData.materials"
       (click)="setSelectedMaterial(material)"
     >
@@ -24,13 +18,27 @@
   </div>
 
   <p>Choose weapon type</p>
-  <p>choose magic</p>
+  <div class="forgeSel" *ngIf="playerData && playerData.weaponTypes">
+    <tr class="section selection"
+    *ngFor="let weapon of playerData.weaponTypes"
+    (click)="setSelectedWeaponType(weapon)"
+    >
+      <td class="Column">{{ weapon.name }}</td>
+      <td class="Column"></td>
+      <td class="Column">${{ weapon.value}}</td>
+      
+      <td *ngIf="weapon.name === selectedWeaponType?.name">+</td>
+      <td *ngIf="weapon.name !== selectedWeaponType?.name"></td>
+    </tr>
+  </div>
+
+  <p *ngIf="playerData.magicList.length>0">choose magic</p>
 </div>
 
-<div *ngIf="selectedMaterial">
+<div *ngIf="selectedMaterial && selectedWeaponType">
   <p class="build">Weapon</p>
   <div class="buildOption">
-    {{ selectedMaterial.name }}
+    {{ selectedMaterial.name }} {{ selectedWeaponType.name }}
   </div>
   <button class="buildButton">Build Weapon</button>
 </div>

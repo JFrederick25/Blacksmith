@@ -1,4 +1,4 @@
-.materialOption {
+.section {
   padding-left: 10px;
 }
 
@@ -32,5 +32,6 @@
 }
 
 .Column {
+  min-width: 75px;
   width: 30%;
 }
