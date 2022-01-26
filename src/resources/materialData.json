@@ -1,7 +1,7 @@
 {
   "materials": [
   ["id", "name", "base type", "crafting rank", "price", "description"],
-  [1, "slate", "stone", 1, 2, "stone commonly found"],
+  [1, "basal", "stone", 1, 2, "stone commonly found"],
   [2, "oak", "wood", 1, 1, "wood from an oak tree"],
   [3, "bronze", "metal", 1, 4, "an alloy of copper and tin"],
   [4, "iron_wood", "wood", 1, 6, "wood from trees grown on the iron hills"],

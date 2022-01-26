@@ -11,7 +11,7 @@ export class GameData {
     p.money = 30;
     p.materials = [
       GameData.setPMaterial('oak', 4),
-      GameData.setPMaterial('slate', 3),
+      GameData.setPMaterial('basal', 3),
       GameData.setPMaterial('bronze', 2),
     ];
     p.weaponTypes = [

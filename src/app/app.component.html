@@ -1,6 +1,9 @@
-<h1>Blacksmith Life</h1>
-<div>Money: {{ playerData.money }}</div>
+<div style="display:flex;">
+  <h1>Blacksmith Life</h1> 
+  <p style="font-size:smaller">v0.3 alpha</p>
+</div>
 
+<div>Money: {{ playerData.money }}</div>
 <div style="display: flex; background-color: rgb(224, 212, 188)">
   <menu class="menu" [menu]="menu" [gameStateData]="gameStateData"></menu>
 
@@ -23,12 +26,12 @@
     <div *ngIf="menu.selected === 'map'">
       <map></map>
     </div>
-    <div *ngIf="menu.selected === 'trader'">
+    <!-- <div *ngIf="menu.selected === 'trader'">
       <trader></trader>
-    </div>
-    <div *ngIf="menu.selected === 'npc'">
+    </div> -->
+    <!-- <div *ngIf="menu.selected === 'npc'">
     <npc></npc>
-  </div>
+    </div> -->
     <div *ngIf="menu.selected === 'crafting skills'">
       <crafting-skills></crafting-skills>
     </div>
