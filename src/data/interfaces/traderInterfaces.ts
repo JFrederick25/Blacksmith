@@ -4,10 +4,10 @@ export interface actor {
   location: string;
 }
 
-export interface trader extends actor {
+export interface Trader extends actor {
   
 }
 
-export interface npc extends actor {
+export interface Npc extends actor {
 
 }

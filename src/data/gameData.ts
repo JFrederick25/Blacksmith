@@ -2,6 +2,7 @@ import { PlayerData } from './playerData';
 import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
 import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
+import { Trader } from './interfaces/traderInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -62,7 +63,8 @@ export class GameData {
     return null;
   }
 
-  static findTrader(index: number) {
+  static findTrader(index: number): Trader {
 
+    return null;
   }
 }
