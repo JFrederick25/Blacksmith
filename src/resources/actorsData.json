@@ -1,0 +1,14 @@
+{
+  "actors": [
+    ["ID", "name", "role", "location"],
+    [1, "Town Trader", "trader", "town"],
+    [2, "Market Vender", "trader", "town"],
+    [3, "Noble Merchant", "trader", "town"],
+    [4, "Mine Trader", "trader", "mountain"],
+    [5, "Baracks Store", "trader", "mountain"],
+    [6, "Cave Explorer", "trader", "mountain"],
+    [7, "Forest Rogue", "trader", "forest"],
+    [8, "Church Priest", "trader", "forest"],
+    [9, "Witch", "trader", "forest"]
+  ]
+}

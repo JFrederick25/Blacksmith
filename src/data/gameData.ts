@@ -1,7 +1,7 @@
-import { Material, PlayerMaterial, WeaponType } from './gameInterfaces';
 import { PlayerData } from './playerData';
 import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
+import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -15,12 +15,13 @@ export class GameData {
       GameData.setPMaterial(3, 2), // 3rd material bronze
     ];
     p.weaponTypes = [
-      GameData.findWeaponType('dagger'),
-      GameData.findWeaponType('club'),
+      GameData.findWeaponType(1), // dagger
+      GameData.findWeaponType(2), // club
     ];
     p.magicList = [];
     p.buildWeapon = null;
   }
+
 
   static setPMaterial(index: number, q?: number): PlayerMaterial {
     const material = GameData.findMaterial(index);
@@ -46,8 +47,8 @@ export class GameData {
     return null;
   }
 
-  static findWeaponType(name: string): WeaponType {
-    const wData = GameData.weaponData.find((x) => x[1] === name);
+  static findWeaponType(index: number): WeaponType {
+    const wData = GameData.weaponData[index];
     if (wData) {
       const w = new WeaponType();
       w.name = wData[1] as string;
@@ -55,5 +56,13 @@ export class GameData {
       return w;
     }
     return null;
+  }
+
+  static findMagic(index: number): Magic {
+    return null;
+  }
+
+  static findTrader(index: number) {
+
   }
 }

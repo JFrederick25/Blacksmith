@@ -1,4 +1,9 @@
-import { BuildWeapon, Magic, PlayerMaterial, WeaponType } from "./gameInterfaces";
+import {
+  BuildWeapon,
+  Magic,
+  PlayerMaterial,
+  WeaponType,
+} from './interfaces/craftingInterfaces';
 
 export class PlayerData {
   money: number;
