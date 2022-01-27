@@ -10,9 +10,9 @@ export class GameData {
   static resetPlayerData(p: PlayerData) {
     p.money = 30;
     p.materials = [
-      GameData.setPMaterial('oak', 4),
-      GameData.setPMaterial('basal', 3),
-      GameData.setPMaterial('bronze', 2),
+      GameData.setPMaterial(1, 4), // 1st material basalt
+      GameData.setPMaterial(2, 3), // 2nd material oak
+      GameData.setPMaterial(3, 2), // 3rd material bronze
     ];
     p.weaponTypes = [
       GameData.findWeaponType('dagger'),
@@ -22,18 +22,19 @@ export class GameData {
     p.buildWeapon = null;
   }
 
-  static setPMaterial(matName: string, q?: number): PlayerMaterial {
-    const pm = new PlayerMaterial(matName, q || 0);
-    const m = GameData.findMaterial(matName);
-    if (m) {
-      pm.material = m;
+  static setPMaterial(index: number, q?: number): PlayerMaterial {
+    const material = GameData.findMaterial(index);
+    if (material) {
+      const pm = new PlayerMaterial(material.name, q || 0);
+      pm.material = material;
       pm.value = pm.material.price;
+      return pm;
     }
-    return pm;
+    return null;
   }
 
-  static findMaterial(name: string): Material {
-    const matData = GameData.materialData.find((x) => x[1] === name);
+  static findMaterial(index: number): Material {
+    const matData = GameData.materialData[index];
     if (matData) {
       const m = new Material();
       m.name = matData[1] as string;
@@ -46,7 +47,7 @@ export class GameData {
   }
 
   static findWeaponType(name: string): WeaponType {
-    const wData = GameData.weaponData.find(x => x[1] === name);
+    const wData = GameData.weaponData.find((x) => x[1] === name);
     if (wData) {
       const w = new WeaponType();
       w.name = wData[1] as string;
