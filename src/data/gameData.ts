@@ -27,9 +27,9 @@ export class GameData {
     p.traders = [
       GameData.findTrader(1), // town trader
       GameData.findTrader(2), // market vendor
-      GameData.findTrader(4), // market vendor
-      GameData.findTrader(6), // market vendor
-      GameData.findTrader(7), // market vendor
+      // GameData.findTrader(4),
+      // GameData.findTrader(6),
+      // GameData.findTrader(7),
     ];
   }
 

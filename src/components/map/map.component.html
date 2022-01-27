@@ -1,6 +1,6 @@
 <h3 class="title">Map Locations</h3>
 <td
-  [attr.border]="selectedLocation === loc ? '1px solid gray;' : 'none;'"
+  [attr.style]="loc === selectedLocation ? 'border: 1px solid gray;' : ''"
   class="selection"
   *ngFor="let loc of _locations"
   (click)="setSelectedLocation(loc)"
