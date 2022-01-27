@@ -4,13 +4,19 @@ import {
   PlayerMaterial,
   WeaponType,
 } from './interfaces/craftingInterfaces';
+import { Npc, Trader } from './interfaces/traderInterfaces';
 
 export class PlayerData {
+  // crafting interfaces
   money: number;
   materials: PlayerMaterial[];
   weaponTypes: WeaponType[];
   magicList: Magic[];
   buildWeapon: BuildWeapon;
+
+  // trader interfaces
+  traders: Trader[];
+  npcs: Npc[];
 
   constructor() {
     this.money = 0;
@@ -20,11 +26,14 @@ export class PlayerData {
     this.buildWeapon = null;
   }
 
+  // for loading/saving data
   static setPlayerData(p: PlayerData, np: PlayerData) {
     p.money = np.money;
     p.materials = np.materials;
     p.weaponTypes = np.weaponTypes;
     p.magicList = np.magicList;
     p.buildWeapon = np.buildWeapon;
+    p.traders = np.traders;
+    p.npcs = np.npcs;
   }
 }

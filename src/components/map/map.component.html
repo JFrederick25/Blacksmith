@@ -2,8 +2,7 @@
 
 <div class="options">
   <p>Choose locations</p>
-  <p>town</p>
-  <p>docks</p>
-  <p>mountain</p>
-  <p>forest</p>
+  <div *ngFor="let loc of _locations">
+    {{loc}}
+  </div>
 </div>

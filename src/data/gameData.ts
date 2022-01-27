@@ -1,12 +1,14 @@
 import { PlayerData } from './playerData';
 import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
+import * as actorGameData from '../resources/actorsData.json';
 import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
 import { Trader } from './interfaces/traderInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
   static readonly weaponData = weaponGameData.weaponTypes;
+  static readonly actorsData = actorGameData.actors;
 
   static resetPlayerData(p: PlayerData) {
     p.money = 30;
@@ -21,6 +23,14 @@ export class GameData {
     ];
     p.magicList = [];
     p.buildWeapon = null;
+
+    p.traders = [
+      GameData.findTrader(1), // town trader
+      GameData.findTrader(2), // market vendor
+      GameData.findTrader(4), // market vendor
+      GameData.findTrader(6), // market vendor
+      GameData.findTrader(7), // market vendor
+    ];
   }
 
 
@@ -64,7 +74,14 @@ export class GameData {
   }
 
   static findTrader(index: number): Trader {
-
+    const actor = GameData.actorsData[index];
+    if (actor) {
+      const t = new Trader();
+      t.name = actor[1] as string;
+      t.role = actor[2] as string;
+      t.location = actor[3] as string;
+      return t;
+    }
     return null;
   }
 }
