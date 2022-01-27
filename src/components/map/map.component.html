@@ -2,7 +2,9 @@
 
 <div class="options">
   <p>Choose locations</p>
-  <div *ngFor="let loc of _locations">
-    {{loc}}
-  </div>
+  <tr class="selection" *ngFor="let loc of _locations" (click)="setSelectedLocation(loc)">
+    <td class="column">{{loc}}</td>
+  </tr>
 </div>
+<br>
+<div class="title" *ngIf="selectedLocation">{{selectedLocation}}</div>

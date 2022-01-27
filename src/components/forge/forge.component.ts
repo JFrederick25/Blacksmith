@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
 import { PlayerData } from '../../data/playerData';
 
@@ -7,15 +7,11 @@ import { PlayerData } from '../../data/playerData';
   templateUrl: './forge.component.html',
   styleUrls: [ './forge.component.css' ]
 })
-export class ForgeComponent implements OnInit  {
+export class ForgeComponent {
   @Input() playerData: PlayerData;
   
   selectedMaterial: PlayerMaterial;
   selectedWeaponType: WeaponType;
-
-  ngOnInit() {
-
-  }
 
   setSelectedMaterial(material) {
     if (this.selectedMaterial && this.selectedMaterial.name === material.name) {

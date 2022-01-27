@@ -1,10 +1,6 @@
-.section {
-  padding-left: 10px;
-}
 
 .selection {
   cursor: pointer;
-  padding-left: 20px;
 }
 
 .selection:hover {
@@ -31,7 +27,8 @@
   margin: 5px 10px 5px;
 }
 
-.Column {
+.column {
   min-width: 75px;
   width: 30%;
+  padding: 5px;
 }

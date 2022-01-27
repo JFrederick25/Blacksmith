@@ -1,0 +1,12 @@
+.selection {
+  cursor: pointer;
+}
+
+.selection:hover {
+  background-color: aquamarine;
+}
+
+.column {
+  width: 300px;
+  padding: 5px;
+}
