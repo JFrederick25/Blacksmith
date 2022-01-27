@@ -1,10 +1,10 @@
 <h3 class="title">Map Locations</h3>
-
-<div class="options">
-  <p>Choose locations</p>
-  <tr class="selection" *ngFor="let loc of _locations" (click)="setSelectedLocation(loc)">
-    <td class="column">{{loc}}</td>
-  </tr>
-</div>
-<br>
-<div class="title" *ngIf="selectedLocation">{{selectedLocation}}</div>
+<td
+  [attr.border]="selectedLocation === loc ? '1px solid gray;' : 'none;'"
+  class="selection"
+  *ngFor="let loc of _locations"
+  (click)="setSelectedLocation(loc)"
+>
+  <p class="column">{{ loc }}</p>
+</td>
+<div class="title" *ngIf="selectedLocation">{{ selectedLocation }}</div>

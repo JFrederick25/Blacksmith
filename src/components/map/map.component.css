@@ -1,5 +1,6 @@
 .selection {
   cursor: pointer;
+  
 }
 
 .selection:hover {
@@ -7,6 +8,7 @@
 }
 
 .column {
-  width: 300px;
-  padding: 5px;
+  width:120px;
+  padding: 1px;
+  text-align: center;
 }
