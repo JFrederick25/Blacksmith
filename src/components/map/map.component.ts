@@ -15,6 +15,16 @@ export class MapComponent  {
 
   _playerData: PlayerData;
   _locations: string[];
+
+  selectedLocation: string;
+
+  setSelectedLocation(location: string) {
+    if (this.selectedLocation === location) {
+      this.selectedLocation = null;
+    } else {
+      this.selectedLocation = location;
+    }
+  }
   
 }
 
