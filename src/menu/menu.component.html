@@ -2,7 +2,7 @@
   <div
     [style.background-color]="setBackground(option)"
     *ngFor="let option of applyMenu()"
-    (click)="menu.selected = option"
+    (click)="setSelection(option)"
   >
     {{ option }}
   </div>
