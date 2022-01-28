@@ -3,7 +3,7 @@ import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
 import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
-import { Trader } from './interfaces/traderInterfaces';
+import { Npc, Trader } from './interfaces/traderInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -30,13 +30,18 @@ export class GameData {
       GameData.findTrader(3),
       GameData.findTrader(4),
       GameData.findTrader(5),
-      GameData.findTrader(6),
-      GameData.findTrader(7),
+      // GameData.findTrader(6),
+      // GameData.findTrader(7),
       GameData.findTrader(8),
       GameData.findTrader(9),
       GameData.findTrader(10),
       GameData.findTrader(11),
     ];
+
+    p.npcs = [
+      GameData.findNpc(6), // king consort
+      GameData.findNpc(7), // the king
+    ]
   }
 
 
@@ -87,6 +92,18 @@ export class GameData {
       t.role = actor[2] as string;
       t.location = actor[3] as string;
       return t;
+    }
+    return null;
+  }
+
+  static findNpc(index: number): Npc {
+    const actor = GameData.actorsData[index];
+    if (actor) {
+      const n = new Npc();
+      n.name = actor[1] as string;
+      n.role = actor[2] as string;
+      n.location = actor[3] as string;
+      return n;
     }
     return null;
   }

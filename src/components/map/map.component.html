@@ -12,9 +12,18 @@
 
 <div *ngIf="selectedLocation">
   <p class="title">{{ selectedLocation }}</p>
-  <tr *ngFor="let traderRow of getTraderRow()">
-    <td class="selection" *ngFor="let trader of traderRow">
-      <p class="column"> {{ trader.name }} </p>
+  <tr *ngFor="let actorRow of getActorRow()">
+    <td 
+    [attr.style]="actor === selectedActor ? 'border: 1px solid gray;' : ''"
+    class="selection"
+    *ngFor="let actor of actorRow"
+    (click)="setSelectedActor(actor)"
+    >
+      <p class="column"> {{ actor.name }} </p>
     </td>
   </tr>
+  <hr>
+  <div *ngIf="selectedActor">
+    {{ selectedActor.role }}
+  </div>
 </div>
