@@ -1,10 +1,20 @@
 <h3 class="title">Map Locations</h3>
+<tr *ngFor="let locRow of getLocationRow()">
 <td
   [attr.style]="loc === selectedLocation ? 'border: 1px solid gray;' : ''"
   class="selection"
-  *ngFor="let loc of _locations"
+  *ngFor="let loc of locRow"
   (click)="setSelectedLocation(loc)"
 >
   <p class="column">{{ loc }}</p>
 </td>
-<div class="title" *ngIf="selectedLocation">{{ selectedLocation }}</div>
+</tr>
+
+<div *ngIf="selectedLocation">
+  <p class="title">{{ selectedLocation }}</p>
+  <tr *ngFor="let traderRow of getTraderRow()">
+    <td class="selection" *ngFor="let trader of traderRow">
+      <p class="column"> {{ trader.name }} </p>
+    </td>
+  </tr>
+</div>

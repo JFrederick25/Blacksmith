@@ -4,11 +4,13 @@
     [1, "Town Trader", "trader", "town"],
     [2, "Market Vender", "trader", "town"],
     [3, "Noble Merchant", "trader", "town"],
-    [4, "Mine Trader", "trader", "mountain"],
-    [5, "Baracks Store", "trader", "mountain"],
-    [6, "Cave Explorer", "trader", "mountain"],
-    [7, "Forest Rogue", "trader", "forest"],
-    [8, "Church Priest", "trader", "forest"],
-    [9, "Witch", "trader", "forest"]
+    [4, "Knight Guild Quartermaster", "trader", "castle"],
+    [5, "King Castle Treasurer", "trader", "castle"],
+    [6, "Mine Trader", "trader", "mountain"],
+    [7, "Baracks Store", "trader", "mountain"],
+    [8, "Cave Explorer", "trader", "mountain"],
+    [9, "Forest Rogue", "trader", "forest"],
+    [10, "Church Priest", "trader", "forest"],
+    [11, "Witch", "trader", "forest"]
   ]
 }
