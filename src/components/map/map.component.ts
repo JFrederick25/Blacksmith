@@ -53,12 +53,12 @@ export class MapComponent {
       );
       this.selectedActor = concat(traders, npcs).find((a) => a === actor);
 
-      if (actor.role === 'trader') {
+      if (actor.role === 'trader' && !this.gameStateData.options.includes('trader')) {
         GameStateData.insertMenuOption(this.gameStateData, 'trader');
         GameStateData.deleteMenuOption(this.gameStateData, 'npc');
       }
 
-      if (actor.role === 'npc') {
+      if (actor.role === 'npc' && !this.gameStateData.options.includes('npc')) {
         GameStateData.insertMenuOption(this.gameStateData, 'npc');
         GameStateData.deleteMenuOption(this.gameStateData, 'trader');
       }
