@@ -1,7 +1,23 @@
 {
   "weaponTypes": [
     ["ID", "name", "value"],
-    [0, "dagger", 3],
-    [1, "club", 5]
+    [1, "knife", 1],
+    [2, "hatchet", 2],
+    [3, "bat", 2],
+    [4, "dagger", 3],
+    [5, "axe", 3],
+    [6, "staff", 3],
+    [7, "club", 5],
+    [8, "longsword", 5],
+    [9, "battleaxe", 5],
+    [10, "spear", 9],
+    [11, "mace", 9],
+    [12, "schnecht-macher", 13],
+    [13, "war axe", 15],
+    [14, "partisan", 13],
+    [15, "morning star", 11],
+    [16, "giant sword", 17],
+    [17, "bardiche", 19],
+    [18, "maul", 17]
   ]
 }

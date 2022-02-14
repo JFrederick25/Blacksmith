@@ -18,8 +18,10 @@ export class GameData {
       GameData.setPMaterial(3, 2), // 3rd material bronze
     ];
     p.weaponTypes = [
-      GameData.findWeaponType(1), // dagger
-      GameData.findWeaponType(2), // club
+      GameData.findWeaponType(1), 
+      GameData.findWeaponType(2), 
+      GameData.findWeaponType(3), 
+      GameData.findWeaponType(4), 
     ];
     p.magicList = [];
     p.buildWeapon = null;
@@ -27,15 +29,13 @@ export class GameData {
     p.traders = [
       GameData.findTrader(1), // town trader
       GameData.findTrader(2), // market vendor
-      GameData.findTrader(3),
-      GameData.findTrader(4),
-      GameData.findTrader(5),
-      // GameData.findTrader(6),
-      // GameData.findTrader(7),
-      GameData.findTrader(8),
-      GameData.findTrader(9),
-      GameData.findTrader(10),
-      GameData.findTrader(11),
+      // GameData.findTrader(3),
+      // GameData.findTrader(4),
+      // GameData.findTrader(5),
+      // GameData.findTrader(8),
+      // GameData.findTrader(9),
+      // GameData.findTrader(10),
+      // GameData.findTrader(11),
     ];
 
     p.npcs = [

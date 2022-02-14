@@ -19,7 +19,9 @@ function chunk(arr, chunkSize) {
 })
 export class MapComponent {
   @Input() set playerData(player: PlayerData) {
-    this._locations = uniq(player.traders.map((p) => p.location));
+    const traders = player.traders;
+    const npcs = player.npcs;
+    this._locations = uniq(concat(traders, npcs).map((p) => p.location));
     this._playerData = player;
   }
 

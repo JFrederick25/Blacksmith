@@ -8,22 +8,6 @@ import { PlayerData } from '../data/playerData';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  menu = {
-    selected: 'game',
-    options: [
-      'game',
-      'forge',
-      'anvil',
-      'store',
-      'map',
-      // 'trader',
-      // 'npc',
-      'crafting skills',
-      'trading skills',
-      'magic skills',
-    ],
-  };
-
   playerData: PlayerData = new PlayerData();
   gameStateData: GameStateData = new GameStateData();
 
