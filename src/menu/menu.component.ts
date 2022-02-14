@@ -25,10 +25,5 @@ export class MenuComponent  {
 
   setSelection(option: string) {
     this.gameStateData.selected = option;
-
-    // reset options if selected !== map or trader or npc
-    if (!['map', 'trader', 'npc'].includes(this.gameStateData.selected)) {
-      GameStateData.resetOptions(this.gameStateData);
-    }
   }
 }

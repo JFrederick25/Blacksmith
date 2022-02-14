@@ -1,17 +1,24 @@
-<h3 class="title">Map Locations</h3>
-<tr *ngFor="let locRow of getLocationRow()">
-<td
-  [attr.style]="loc === selectedLocation ? 'border: 1px solid gray;' : ''"
-  class="selection"
-  *ngFor="let loc of locRow"
-  (click)="setSelectedLocation(loc)"
->
-  <p class="column">{{ loc }}</p>
-</td>
-</tr>
+<!--MAP-->
+<div *ngIf="!selectedLocation">
+  <h3 class="title">Map Locations</h3>
+  <tr *ngFor="let locRow of getLocationRow()">
+    <td
+      [attr.style]="loc === selectedLocation ? 'border: 1px solid gray;' : ''"
+      class="selection"
+      *ngFor="let loc of locRow"
+      (click)="setSelectedLocation(loc)"
+    >
+      <p class="column">{{ loc }}</p>
+    </td>
+  </tr>
+</div>
 
-<div *ngIf="selectedLocation">
-  <p class="title">{{ selectedLocation }}</p>
+<!--LOCATION-->
+<div *ngIf="selectedLocation && !selectedActor">
+  <p class="title">
+  <span class="back" (click)="setSelectedLocation(selectedLocation)">&#8678;</span>
+    {{ selectedLocation }}
+  </p>
   <tr *ngFor="let actorRow of getActorRow()">
     <td 
     [attr.style]="actor === selectedActor ? 'border: 1px solid gray;' : ''"
@@ -22,8 +29,14 @@
       <p class="column"> {{ actor.name }} </p>
     </td>
   </tr>
+</div>
+
+<!--ACTOR-->
+<div *ngIf="selectedActor">
+  <p class="title"> 
+    <span class="back" (click)="setSelectedActor(selectedActor)">&#8678;</span>
+    {{ selectedActor.name }}
+  </p>
+  {{ selectedActor.role }}
   <hr>
-  <div *ngIf="selectedActor">
-    {{ selectedActor.role }}
-  </div>
 </div>

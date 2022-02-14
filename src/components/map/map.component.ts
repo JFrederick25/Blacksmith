@@ -42,8 +42,6 @@ export class MapComponent {
   setSelectedActor(actor: Actor) {
     if (this.selectedActor === actor) {
       this.selectedActor = null;
-      GameStateData.deleteMenuOption(this.gameStateData, 'npc');
-      GameStateData.deleteMenuOption(this.gameStateData, 'trader');
     } else {
       const traders = this._playerData.traders.filter(
         (t) => t.location === this.selectedLocation
@@ -52,16 +50,6 @@ export class MapComponent {
         (t) => t.location === this.selectedLocation
       );
       this.selectedActor = concat(traders, npcs).find((a) => a === actor);
-
-      if (actor.role === 'trader' && !this.gameStateData.options.includes('trader')) {
-        GameStateData.insertMenuOption(this.gameStateData, 'trader');
-        GameStateData.deleteMenuOption(this.gameStateData, 'npc');
-      }
-
-      if (actor.role === 'npc' && !this.gameStateData.options.includes('npc')) {
-        GameStateData.insertMenuOption(this.gameStateData, 'npc');
-        GameStateData.deleteMenuOption(this.gameStateData, 'trader');
-      }
     }
   }
 

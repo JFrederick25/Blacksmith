@@ -4,11 +4,9 @@ const gameOptions: string[] = [
   'anvil',          // 2
   'store',          // 3
   'map',            // 4
-  // 'trader',        // 5
-  // 'npc',           // 6
-  'crafting skills', // 7
-  'trading skills',  // 8
-  'magic skills',    // 9
+  'crafting skills', // 5
+  'trading skills',  // 6
+  'magic skills',    // 7
 ];
 
 export class GameStateData {
