@@ -39,4 +39,6 @@
   </p>
   {{ selectedActor.role }}
   <hr>
+  <trader *ngIf="selectedActor.role === 'trader'"></trader>
+  <npc *ngIf="selectedActor.role === 'npc'"></npc>
 </div>
