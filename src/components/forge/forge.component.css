@@ -28,7 +28,13 @@
 }
 
 .column {
+  width:120px;
+  padding: 1px;
+  text-align: center;
+}
+
+/* .column {
   min-width: 75px;
   width: 30%;
   padding: 5px;
-}
+} */

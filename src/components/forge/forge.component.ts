@@ -2,6 +2,14 @@ import { Component, Input } from '@angular/core';
 import { PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
 import { PlayerData } from '../../data/playerData';
 
+function chunk(arr, chunkSize) {
+  if (chunkSize <= 0) throw 'Invalid chunk size';
+  var R = [];
+  for (var i = 0, len = arr.length; i < len; i += chunkSize)
+    R.push(arr.slice(i, i + chunkSize));
+  return R;
+}
+
 @Component({
   selector: 'forge',
   templateUrl: './forge.component.html',
@@ -27,5 +35,9 @@ export class ForgeComponent {
     } else {
       this.selectedWeaponType = weaponType;
     }
+  }
+
+  getMaterialRow(): PlayerMaterial[] {
+    return chunk(this.playerData.materials, 3);
   }
 }

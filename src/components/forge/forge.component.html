@@ -5,15 +5,15 @@
   <div class="forgeSel" *ngIf="playerData && playerData.materials">
     <tr
       class="selection"
-      *ngFor="let material of playerData.materials"
+      *ngFor="let material of getMaterialRow()"
       (click)="setSelectedMaterial(material)"
     >
       <td class="column">{{ material.name }}</td>
-      <td class="column">({{ material.quantity }})</td>
-      <td class="column">${{ material.value }}</td>
-
+      <!-- <td class="column">({{ material.quantity }})</td>
+      <td class="column">${{ material.value }}</td> -->
+<!-- 
       <td *ngIf="material.name === selectedMaterial?.name">+</td>
-      <td *ngIf="material.name !== selectedMaterial?.name"></td>
+      <td *ngIf="material.name !== selectedMaterial?.name"></td> -->
     </tr>
   </div>
 
@@ -24,8 +24,8 @@
     (click)="setSelectedWeaponType(weapon)"
     >
       <td class="column">{{ weapon.name }}</td>
-      <td class="column"></td>
-      <td class="column">${{ weapon.value}}</td>
+      <!-- <td class="column"></td>
+      <td class="column">${{ weapon.value}}</td> -->
       
       <td *ngIf="weapon.name === selectedWeaponType?.name">+</td>
       <td *ngIf="weapon.name !== selectedWeaponType?.name"></td>

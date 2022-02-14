@@ -64,6 +64,7 @@ export class GameData {
       m.baseType = matData[2] as string;
       m.craftingRank = matData[3] as number;
       m.price = matData[4] as number;
+      m.description = matData[5] as string;
       return m;
     }
     return null;

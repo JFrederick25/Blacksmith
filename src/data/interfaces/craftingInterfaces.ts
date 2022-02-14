@@ -4,11 +4,12 @@ export class PlayerMaterial {
   quantity: number;
   value: number;
 
-  constructor(name: string, q?: number, p?: number) {
+  constructor(name: string, q?: number, p?: number, d?: string) {
     this.name = name;
     this.material = new Material();
     this.material.name = name;
     this.material.price = p || 0;
+    this.material.description = d || '';
     this.quantity = q || 0;
     this.value = 0;
   }
@@ -19,6 +20,7 @@ export class Material {
   baseType: string;
   craftingRank: number;
   price: number;
+  description: string;
 }
 
 export class WeaponType {
