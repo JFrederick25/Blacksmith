@@ -21,6 +21,9 @@ export class ForgeComponent {
   selectedMaterial: PlayerMaterial;
   selectedWeaponType: WeaponType;
 
+  showMaterials: boolean = false;
+  showWeapons: boolean = false;
+
   setSelectedMaterial(material) {
     if (this.selectedMaterial && this.selectedMaterial.name === material.name) {
       this.selectedMaterial = null;

@@ -1,22 +1,35 @@
 <p class="title">Forge</p>
 
 <div *ngIf="playerData && playerData.materials">
-  <p>Choose material</p>
-  <hr>
-  <tr *ngFor="let materials of getMaterialRow()">
-    <td 
-      *ngFor="let material of materials" 
-      class="selection"
-      [attr.style]="material === selectedMaterial ? 'border: 1px solid gray;' : ''"
-      (click)="setSelectedMaterial(material)"
-    >
-      <p class="column">{{ material.name }}</p>
-    </td>
-  </tr>
+  <div class="chevronButton" (click)="showMaterials = !showMaterials; showWeapons = false;">Choose Material
+    <span *ngIf="!showMaterials">&#9204;</span>
+    <span *ngIf="showMaterials">&#9207;</span>
+    <span style="padding-left: 20px;" *ngIf="selectedMaterial">{{selectedMaterial.name}}</span>
+    <p *ngIf="selectedMaterial" class="flavorText">{{selectedMaterial.material.description}}</p>
+  </div>
+  <div *ngIf="showMaterials">
+    <hr>
+    <tr *ngFor="let materials of getMaterialRow()">
+      <td 
+        *ngFor="let material of materials" 
+        class="selection"
+        [attr.style]="material === selectedMaterial ? 'border: 1px solid gray;' : ''"
+        (click)="setSelectedMaterial(material)"
+      >
+        <p class="column">{{ material.name }}</p>
+      </td>
+    </tr>
+    <hr>
+  </div>
 </div>
 
 <div *ngIf="playerData && playerData.weaponTypes">
-  <p>Choose weapon type</p>
+<div class="chevronButton" (click)="showWeapons = !showWeapons; showMaterials = false;">Choose Weapon
+<span *ngIf="!showWeapons">&#9204;</span>
+<span *ngIf="showWeapons">&#9207;</span>
+<span style="padding-left: 20px;" *ngIf="selectedWeaponType">{{selectedWeaponType.name}}</span>
+</div>
+<div *ngIf="showWeapons">
   <hr>
   <tr *ngFor="let weapons of getWeaponsRow()">
     <td
@@ -28,6 +41,8 @@
       <p class="column">{{weapon.name}}</p>
     </td>
   </tr>
+  <hr>
+</div>
 </div>
 
 <p *ngIf="playerData.magicList.length>0">choose magic</p>

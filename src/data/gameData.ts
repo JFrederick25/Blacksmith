@@ -47,6 +47,7 @@ export class GameData {
       GameData.findWeaponType(13), 
       GameData.findWeaponType(14), 
       GameData.findWeaponType(15), 
+      GameData.findWeaponType(16), 
     ];
     p.magicList = [];
     p.buildWeapon = null;

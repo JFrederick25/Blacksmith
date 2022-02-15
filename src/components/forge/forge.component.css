@@ -28,3 +28,12 @@
 .buildButton {
   margin: 5px 10px 5px;
 }
+
+.chevronButton {
+  cursor: pointer;
+}
+
+.flavorText {
+  font-size: small;
+  margin: 0;
+}
