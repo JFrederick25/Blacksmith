@@ -40,4 +40,8 @@ export class ForgeComponent {
   getMaterialRow(): PlayerMaterial[][] {
     return chunk(this.playerData.materials, 4);
   }
+
+  getWeaponsRow(): WeaponType[][] {
+    return chunk(this.playerData.weaponTypes, 4);
+  }
 }

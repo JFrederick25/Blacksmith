@@ -15,18 +15,18 @@
   </tr>
 </div>
 
-<p>Choose weapon type</p>
-<div class="forgeSel" *ngIf="playerData && playerData.weaponTypes">
-  <tr class="selection"
-  *ngFor="let weapon of playerData.weaponTypes"
-  (click)="setSelectedWeaponType(weapon)"
-  >
-    <td class="column">{{ weapon.name }}</td>
-    <!-- <td class="column"></td>
-    <td class="column">${{ weapon.value}}</td> -->
-    
-    <td *ngIf="weapon.name === selectedWeaponType?.name">+</td>
-    <td *ngIf="weapon.name !== selectedWeaponType?.name"></td>
+<div *ngIf="playerData && playerData.weaponTypes">
+  <p>Choose weapon type</p>
+  <hr>
+  <tr *ngFor="let weapons of getWeaponsRow()">
+    <td
+      *ngFor="let weapon of weapons"
+      class="selection"
+      [attr.style]="weapon === selectedWeaponType ? 'border: 1px solid gray;' : ''"
+      (click)="setSelectedWeaponType(weapon)"
+    >
+      <p class="column">{{weapon.name}}</p>
+    </td>
   </tr>
 </div>
 
