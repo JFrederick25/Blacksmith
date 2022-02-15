@@ -1,14 +1,16 @@
-
 .selection {
   cursor: pointer;
+  
 }
 
 .selection:hover {
   background-color: aquamarine;
 }
 
-.forgeSel {
-  width: 85%;
+.column {
+  width:100px;
+  padding: 1px;
+  text-align: center;
 }
 
 .build {
@@ -26,15 +28,3 @@
 .buildButton {
   margin: 5px 10px 5px;
 }
-
-.column {
-  width:120px;
-  padding: 1px;
-  text-align: center;
-}
-
-/* .column {
-  min-width: 75px;
-  width: 30%;
-  padding: 5px;
-} */

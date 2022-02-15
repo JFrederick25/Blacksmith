@@ -37,7 +37,7 @@ export class ForgeComponent {
     }
   }
 
-  getMaterialRow(): PlayerMaterial[] {
-    return chunk(this.playerData.materials, 3);
+  getMaterialRow(): PlayerMaterial[][] {
+    return chunk(this.playerData.materials, 4);
   }
 }

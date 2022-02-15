@@ -1,39 +1,37 @@
 <p class="title">Forge</p>
 
-<div class="options">
+<div *ngIf="playerData && playerData.materials">
   <p>Choose material</p>
-  <div class="forgeSel" *ngIf="playerData && playerData.materials">
-    <tr
+  <hr>
+  <tr *ngFor="let materials of getMaterialRow()">
+    <td 
+      *ngFor="let material of materials" 
       class="selection"
-      *ngFor="let material of getMaterialRow()"
+      [attr.style]="material === selectedMaterial ? 'border: 1px solid gray;' : ''"
       (click)="setSelectedMaterial(material)"
     >
-      <td class="column">{{ material.name }}</td>
-      <!-- <td class="column">({{ material.quantity }})</td>
-      <td class="column">${{ material.value }}</td> -->
-<!-- 
-      <td *ngIf="material.name === selectedMaterial?.name">+</td>
-      <td *ngIf="material.name !== selectedMaterial?.name"></td> -->
-    </tr>
-  </div>
-
-  <p>Choose weapon type</p>
-  <div class="forgeSel" *ngIf="playerData && playerData.weaponTypes">
-    <tr class="selection"
-    *ngFor="let weapon of playerData.weaponTypes"
-    (click)="setSelectedWeaponType(weapon)"
-    >
-      <td class="column">{{ weapon.name }}</td>
-      <!-- <td class="column"></td>
-      <td class="column">${{ weapon.value}}</td> -->
-      
-      <td *ngIf="weapon.name === selectedWeaponType?.name">+</td>
-      <td *ngIf="weapon.name !== selectedWeaponType?.name"></td>
-    </tr>
-  </div>
-
-  <p *ngIf="playerData.magicList.length>0">choose magic</p>
+      <p class="column">{{ material.name }}</p>
+    </td>
+  </tr>
 </div>
+
+<p>Choose weapon type</p>
+<div class="forgeSel" *ngIf="playerData && playerData.weaponTypes">
+  <tr class="selection"
+  *ngFor="let weapon of playerData.weaponTypes"
+  (click)="setSelectedWeaponType(weapon)"
+  >
+    <td class="column">{{ weapon.name }}</td>
+    <!-- <td class="column"></td>
+    <td class="column">${{ weapon.value}}</td> -->
+    
+    <td *ngIf="weapon.name === selectedWeaponType?.name">+</td>
+    <td *ngIf="weapon.name !== selectedWeaponType?.name"></td>
+  </tr>
+</div>
+
+<p *ngIf="playerData.magicList.length>0">choose magic</p>
+
 
 <div *ngIf="selectedMaterial && selectedWeaponType">
   <p class="build">Weapon</p>
