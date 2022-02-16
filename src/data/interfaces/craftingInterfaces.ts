@@ -38,4 +38,10 @@ export class BuildWeapon {
   material: Material;
   weaponType: WeaponType;
   magic: Magic;
+
+  constructor() {
+    this.material = new Material();
+    this.weaponType = new WeaponType();
+    this.magic = new Magic();
+  }
 }

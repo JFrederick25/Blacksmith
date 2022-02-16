@@ -1,6 +1,5 @@
 .selection {
   cursor: pointer;
-  
 }
 
 .selection:hover {
@@ -17,12 +16,15 @@
   font-size: 16px;
   font-weight: bold;
   text-decoration: underline;
-  padding: 10px 20px 10px;
+  padding-top: 20px;
+  padding-left: 10px;
   margin: 0;
 }
 
 .buildOption {
-  padding: 5px 20px 5px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
   font-size: large;
   font-weight: bold;
 }
@@ -33,6 +35,8 @@
 
 .chevronButton {
   cursor: pointer;
+  padding-left: 10px;
+  padding-top: 20px;
 }
 
 .flavorText {

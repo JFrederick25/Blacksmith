@@ -12,7 +12,7 @@ export class PlayerData {
   materials: PlayerMaterial[];
   weaponTypes: WeaponType[];
   magicList: Magic[];
-  buildWeapon: BuildWeapon;
+  buildWeapons: BuildWeapon[];
 
   // trader interfaces
   traders: Trader[];
@@ -23,7 +23,7 @@ export class PlayerData {
     this.materials = [];
     this.weaponTypes = [];
     this.magicList = [];
-    this.buildWeapon = null;
+    this.buildWeapons = [];
   }
 
   // for loading/saving data
@@ -32,7 +32,7 @@ export class PlayerData {
     p.materials = np.materials;
     p.weaponTypes = np.weaponTypes;
     p.magicList = np.magicList;
-    p.buildWeapon = np.buildWeapon;
+    p.buildWeapons = np.buildWeapons;
     p.traders = np.traders;
     p.npcs = np.npcs;
   }

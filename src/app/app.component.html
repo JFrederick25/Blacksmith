@@ -19,7 +19,7 @@
       <forge [playerData]="playerData"></forge>
     </div>
     <div *ngIf="gameStateData.selected === 'anvil'">
-      <anvil></anvil>
+      <anvil [playerData]="playerData"></anvil>
     </div>
     <div *ngIf="gameStateData.selected === 'store'">
       <store></store>

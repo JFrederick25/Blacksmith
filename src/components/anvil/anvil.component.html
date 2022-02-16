@@ -1,5 +1,9 @@
 <h3 class="title">Anvil</h3>
 
+<div *ngFor="let build of playerData.buildWeapons">
+  {{build.material.name}} {{build.weaponType.name}} 
+</div>
+
 <div class="options">
   <p>temper hammer (increases sharpness +1)</p>
 </div>

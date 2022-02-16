@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Magic, PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
+import { BuildWeapon, Magic, PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 function chunk(arr, chunkSize) {
@@ -66,5 +66,20 @@ export class ForgeComponent {
 
   getMagicRow(): Magic[][] {
     return chunk(this.playerData.magicList, 4);
+  }
+
+  buildWeapon() {
+    const newWeapon = new BuildWeapon();
+    Object.assign(newWeapon.material, this.selectedMaterial.material);
+    Object.assign(newWeapon.weaponType, this.selectedWeaponType);
+    
+    if (this.selectedMagic) {
+      Object.assign(newWeapon.magic, this.selectedMagic);
+    }
+
+    this.playerData.buildWeapons.push(newWeapon);
+    this.selectedMaterial = null;
+    this.selectedWeaponType = null;
+    this.selectedMagic = null;
   }
 }

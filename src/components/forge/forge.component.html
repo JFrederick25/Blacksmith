@@ -73,5 +73,5 @@
     {{ selectedMaterial.name }} {{ selectedWeaponType.name }}
     <span *ngIf="selectedMagic">of {{selectedMagic.name}}</span>
   </div>
-  <button class="buildButton">Build Weapon</button>
+  <button class="buildButton" (click)="buildWeapon()">Build Weapon</button>
 </div>

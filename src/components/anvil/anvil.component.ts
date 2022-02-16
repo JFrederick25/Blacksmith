@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PlayerData } from '../../data/playerData';
 
 @Component({
   selector: 'anvil',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ './anvil.component.css' ]
 })
 export class AnvilComponent  {
-  
+  @Input() playerData: PlayerData;
 }
