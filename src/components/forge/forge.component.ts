@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
+import { Magic, PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 function chunk(arr, chunkSize) {
@@ -20,11 +20,19 @@ export class ForgeComponent {
   
   selectedMaterial: PlayerMaterial;
   selectedWeaponType: WeaponType;
+  selectedMagic: Magic;
 
   showMaterials: boolean = false;
   showWeapons: boolean = false;
+  showMagic: boolean = false;
 
-  setSelectedMaterial(material) {
+  setShowOption(option: string) {
+    this.showMaterials = option === 'materials' ? !this.showMaterials : false;
+    this.showWeapons = option === 'weapons' ? !this.showWeapons : false;
+    this.showMagic = option === 'magic' ? !this.showMagic : false;
+  }
+
+  setSelectedMaterial(material: PlayerMaterial) {
     if (this.selectedMaterial && this.selectedMaterial.name === material.name) {
       this.selectedMaterial = null;
     } else {
@@ -32,11 +40,19 @@ export class ForgeComponent {
     }
   }
 
-  setSelectedWeaponType(weaponType) {
+  setSelectedWeaponType(weaponType: WeaponType) {
     if (this.selectedWeaponType && this.selectedWeaponType.name === weaponType.name) {
       this.selectedWeaponType = null;
     } else {
       this.selectedWeaponType = weaponType;
+    }
+  }
+
+  setSelectedMagic(magic: Magic) {
+    if (this.selectedMagic && this.selectedMagic.name === magic.name) {
+      this.selectedMagic = null;
+    } else {
+      this.selectedMagic = magic;
     }
   }
 
@@ -46,5 +62,9 @@ export class ForgeComponent {
 
   getWeaponsRow(): WeaponType[][] {
     return chunk(this.playerData.weaponTypes, 4);
+  }
+
+  getMagicRow(): Magic[][] {
+    return chunk(this.playerData.magicList, 4);
   }
 }

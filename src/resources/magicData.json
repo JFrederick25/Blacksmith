@@ -1,4 +1,10 @@
-[
-  ["fire", 150],
-  ["ice", 250]
-]
+{
+  "magic": [
+    ["ID", "name", "rank", "value"],
+    [1, "fire", 1, 150],
+    [2, "ice", 1, 250],
+    [3, "wind", 1, 300],
+    [4, "lightning", 2, 550],
+    [5, "earthquake", 2, 350]
+  ]
+}

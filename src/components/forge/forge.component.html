@@ -1,7 +1,7 @@
 <p class="title">Forge</p>
 
 <div *ngIf="playerData && playerData.materials">
-  <div class="chevronButton" (click)="showMaterials = !showMaterials; showWeapons = false;">Choose Material
+  <div class="chevronButton" (click)="setShowOption('materials')">Choose Material
     <span *ngIf="!showMaterials">&#9204;</span>
     <span *ngIf="showMaterials">&#9207;</span>
     <span style="padding-left: 20px;" *ngIf="selectedMaterial">{{selectedMaterial.name}}</span>
@@ -24,29 +24,47 @@
 </div>
 
 <div *ngIf="playerData && playerData.weaponTypes">
-<div class="chevronButton" (click)="showWeapons = !showWeapons; showMaterials = false;">Choose Weapon
-<span *ngIf="!showWeapons">&#9204;</span>
-<span *ngIf="showWeapons">&#9207;</span>
-<span style="padding-left: 20px;" *ngIf="selectedWeaponType">{{selectedWeaponType.name}}</span>
-</div>
-<div *ngIf="showWeapons">
-  <hr>
-  <tr *ngFor="let weapons of getWeaponsRow()">
-    <td
-      *ngFor="let weapon of weapons"
-      class="selection"
-      [attr.style]="weapon === selectedWeaponType ? 'border: 1px solid gray;' : ''"
-      (click)="setSelectedWeaponType(weapon)"
-    >
-      <p class="column">{{weapon.name}}</p>
-    </td>
-  </tr>
-  <hr>
-</div>
+  <div class="chevronButton" (click)="setShowOption('weapons')">Choose Weapon
+    <span *ngIf="!showWeapons">&#9204;</span>
+    <span *ngIf="showWeapons">&#9207;</span>
+    <span style="padding-left: 20px;" *ngIf="selectedWeaponType">{{selectedWeaponType.name}}</span>
+  </div>
+  <div *ngIf="showWeapons">
+    <hr>
+    <tr *ngFor="let weapons of getWeaponsRow()">
+      <td
+        *ngFor="let weapon of weapons"
+        class="selection"
+        [attr.style]="weapon === selectedWeaponType ? 'border: 1px solid gray;' : ''"
+        (click)="setSelectedWeaponType(weapon)"
+      >
+        <p class="column">{{weapon.name}}</p>
+      </td>
+    </tr>
+    <hr>
+  </div>
 </div>
 
-<p *ngIf="playerData.magicList.length>0">choose magic</p>
-
+<div *ngIf="playerData && playerData.magicList">
+  <div class="chevronButton" (click)="setShowOption('magic')">Choose Magic
+  <span *ngIf="!showMagic">&#9204;</span>
+  <span *ngIf="showMagic">&#9207;</span>
+  </div>
+  <div *ngIf="showMagic">
+    <hr>
+    <tr *ngFor="let magics of getMagicRow()">
+      <td
+        *ngFor="let magic of magics"
+        class="selection"
+        [attr.style]="magic === selectedMagic ? 'border: 1px solid gray;' : ''"
+        (click)="setSelectedMagic(magic)"
+      >
+        <p class="column">{{magic.name}}</p>
+      </td>
+    </tr>
+    <hr>
+  </div>
+</div>
 
 <div *ngIf="selectedMaterial && selectedWeaponType">
   <p class="build">Weapon</p>

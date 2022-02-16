@@ -2,6 +2,7 @@ import { PlayerData } from './playerData';
 import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
+import * as magicGameData from '../resources/magicData.json';
 import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
 import { Npc, Trader } from './interfaces/traderInterfaces';
 
@@ -9,6 +10,7 @@ export class GameData {
   static readonly materialData = materialGameData.materials;
   static readonly weaponData = weaponGameData.weaponTypes;
   static readonly actorsData = actorGameData.actors;
+  static readonly magicData = magicGameData.magic;
 
   static resetPlayerData(p: PlayerData) {
     p.money = 30;
@@ -49,7 +51,13 @@ export class GameData {
       GameData.findWeaponType(15), 
       GameData.findWeaponType(16), 
     ];
-    p.magicList = [];
+    p.magicList = [
+      GameData.findMagic(1),
+      GameData.findMagic(2),
+      GameData.findMagic(3),
+      GameData.findMagic(4),
+      GameData.findMagic(5),
+    ];
     p.buildWeapon = null;
 
     p.traders = [
@@ -108,6 +116,14 @@ export class GameData {
   }
 
   static findMagic(index: number): Magic {
+    const mData = GameData.magicData[index];
+    if (mData) {
+      const m = new Magic();
+      m.name = mData[1] as string;
+      m.rank = mData[2] as number;
+      m.value = mData[3] as number;
+      return m;
+    }
     return null;
   }
 

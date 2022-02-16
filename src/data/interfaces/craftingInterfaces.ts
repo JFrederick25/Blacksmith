@@ -30,6 +30,8 @@ export class WeaponType {
 
 export class Magic {
   name: string;
+  rank: number;
+  value: number;
 }
 
 export class BuildWeapon {
