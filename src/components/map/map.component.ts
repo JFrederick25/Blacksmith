@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PlayerData } from '../../data/playerData';
 import { uniq, concat } from 'lodash';
-import { Actor } from '../../data/interfaces/traderInterfaces';
+import { Actor, Trader, Npc } from '../../data/interfaces/traderInterfaces';
 import { GameStateData } from '../../data/gameStateData';
 
 function chunk(arr, chunkSize) {
@@ -51,7 +51,8 @@ export class MapComponent {
       const npcs = this._playerData.npcs.filter(
         (t) => t.location === this.selectedLocation
       );
-      this.selectedActor = concat(traders, npcs).find((a) => a === actor);
+      const foundActor = concat(traders, npcs).find((a) => a === actor);
+      this.selectedActor = foundActor.role === 'trader' ? foundActor as Trader : foundActor as Npc;
     }
   }
 

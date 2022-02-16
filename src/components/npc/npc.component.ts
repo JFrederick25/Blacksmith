@@ -9,5 +9,5 @@ import { PlayerData } from '../../data/playerData';
 })
 export class NpcComponent  {
   @Input() playerData: PlayerData;
-  @Input() activeTrader: Npc;
+  @Input() activeTraderName: string;
 }

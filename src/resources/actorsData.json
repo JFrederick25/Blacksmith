@@ -2,7 +2,7 @@
   "actors": [
     ["ID", "name", "role", "location", "trade goods", "dialogs"],
     [1, "Town Trader", "trader", "town", [[1, 10], [2, 12], [3, 4], [4, 2]]],
-    [2, "Market Vender", "trader", "town", [[4, 14], [6, 9], [8, 4], [11, 2]]],
+    [2, "Market Vender", "trader", "town", [[3, 14], [6, 9], [8, 4], [11, 2]]],
     [3, "Noble Merchant", "trader", "town"],
     [4, "Knight Guild Quartermaster", "trader", "castle"],
     [5, "King Castle Treasurer", "trader", "castle"],

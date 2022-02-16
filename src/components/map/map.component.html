@@ -37,8 +37,12 @@
     <span class="back" (click)="setSelectedActor(selectedActor)">&#8678;</span>
     {{ selectedActor.name }}
   </p>
-  {{ selectedActor.role }}
-  <hr>
-  <trader *ngIf="selectedActor.role === 'trader'" [playerData]="playerData" [activeTrader]="selectedActor"></trader>
-  <npc *ngIf="selectedActor.role === 'npc'" [playerData]="playerData" [activeTrader]="selectedActor"></npc>
+  <trader
+    *ngIf="selectedActor.role === 'trader'" 
+    [playerData]="_playerData" 
+    [activeTraderName]="selectedActor.name"></trader>
+  <npc
+    *ngIf="selectedActor.role === 'npc'"
+    [playerData]="_playerData"
+    [activeTraderName]="selectedActor.name"></npc>
 </div>

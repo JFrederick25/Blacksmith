@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Trader } from '../../data/interfaces/traderInterfaces';
 import { PlayerData } from '../../data/playerData';
 
@@ -7,7 +7,13 @@ import { PlayerData } from '../../data/playerData';
   templateUrl: './trader.component.html',
   styleUrls: [ './trader.component.css' ]
 })
-export class TraderComponent  {
+export class TraderComponent implements OnInit {
   @Input() playerData: PlayerData;
-  @Input() activeTrader: Trader;
+  @Input() activeTraderName: string;
+
+  activeTrader: Trader;
+
+  ngOnInit(): void {
+      this.activeTrader = this.playerData.traders.find(x => x.name === this.activeTraderName);
+    }
 }
