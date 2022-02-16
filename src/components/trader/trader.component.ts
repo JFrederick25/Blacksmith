@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Trader } from '../../data/interfaces/traderInterfaces';
+import { PlayerData } from '../../data/playerData';
 
 @Component({
   selector: 'trader',
@@ -6,5 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ './trader.component.css' ]
 })
 export class TraderComponent  {
-  
+  @Input() playerData: PlayerData;
+  @Input() activeTrader: Trader;
 }

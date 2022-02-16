@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Npc } from '../../data/interfaces/traderInterfaces';
+import { PlayerData } from '../../data/playerData';
 
 @Component({
   selector: 'npc',
@@ -6,5 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ './npc.component.css' ]
 })
 export class NpcComponent  {
-  
+  @Input() playerData: PlayerData;
+  @Input() activeTrader: Npc;
 }

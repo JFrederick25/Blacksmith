@@ -39,6 +39,6 @@
   </p>
   {{ selectedActor.role }}
   <hr>
-  <trader *ngIf="selectedActor.role === 'trader'"></trader>
-  <npc *ngIf="selectedActor.role === 'npc'"></npc>
+  <trader *ngIf="selectedActor.role === 'trader'" [playerData]="playerData" [activeTrader]="selectedActor"></trader>
+  <npc *ngIf="selectedActor.role === 'npc'" [playerData]="playerData" [activeTrader]="selectedActor"></npc>
 </div>

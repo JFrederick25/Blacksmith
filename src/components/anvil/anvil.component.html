@@ -2,6 +2,7 @@
 
 <div *ngFor="let build of playerData.buildWeapons">
   {{build.material.name}} {{build.weaponType.name}} 
+  <span *ngIf="build.magic"> of {{build.magic.name}}</span>
 </div>
 
 <div class="options">

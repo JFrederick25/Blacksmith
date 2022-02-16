@@ -4,7 +4,8 @@ import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
 import * as magicGameData from '../resources/magicData.json';
 import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
-import { Npc, Trader } from './interfaces/traderInterfaces';
+import { Npc, Trader, TraderMaterial } from './interfaces/traderInterfaces';
+import { NgForOf } from '@angular/common';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -137,6 +138,11 @@ export class GameData {
       t.name = actor[1] as string;
       t.role = actor[2] as string;
       t.location = actor[3] as string;
+      
+      for(let mat of actor[4]) {
+        const mData = GameData.findMaterial(mat[0]);
+        t.materials.push(new TraderMaterial(mData[1], mat[1]));
+      }
       return t;
     }
     return null;

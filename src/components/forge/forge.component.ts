@@ -81,5 +81,7 @@ export class ForgeComponent {
     this.selectedMaterial = null;
     this.selectedWeaponType = null;
     this.selectedMagic = null;
+
+    this.setShowOption(null);
   }
 }

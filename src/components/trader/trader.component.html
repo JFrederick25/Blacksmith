@@ -1,3 +1,9 @@
+{{activeTrader.name}}
+
 <div class="options">
   <p>Materials for sale</p>
+
+  <div *ngFor="let traderMaterial of activeTrader.materials">
+    {{traderMaterial.name}}
+  </div>
 </div>

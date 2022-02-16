@@ -21,6 +21,7 @@ export class Material {
   craftingRank: number;
   price: number;
   description: string;
+  }
 }
 
 export class WeaponType {
