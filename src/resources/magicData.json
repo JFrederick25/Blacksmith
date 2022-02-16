@@ -1,10 +1,13 @@
 {
   "magic": [
-    ["ID", "name", "rank", "value"],
-    [1, "fire", 1, 150],
-    [2, "ice", 1, 250],
-    [3, "wind", 1, 300],
-    [4, "lightning", 2, 550],
-    [5, "earthquake", 2, 350]
+    ["ID", "name", "rank", "value", "enchant type", "enchant cost"],
+    [1, "fire", 1, 150, "salt", 2],
+    [2, "ice", 1, 250, "frost", 2],
+    [3, "wind", 1, 300, "down", 1],
+    [4, "lightning", 2, 550, "vapor", 1],
+    [5, "quakes", 2, 350, "dust", 2],
+    [6, "necrosis", 2, 600, "bonemeal", 2],
+    [7, "chaos", 3, 950, "star dust", 3],
+    [8, "divine power", 3, 1000, "aulm", 3]
   ]
 }

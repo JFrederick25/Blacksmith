@@ -4,18 +4,18 @@
   [1, "basalt", "stone", 1, 2, "stone commonly found"],
   [2, "oak", "wood", 1, 1, "wood from an oak tree"],
   [3, "bronze", "metal", 1, 4, "an alloy of copper and tin"],
-  [4, "iron_wood", "wood", 1, 6, "wood from trees grown on the iron hills"],
+  [4, "iron wood", "wood", 1, 6, "wood from trees grown on the iron hills"],
   [5, "obsidian", "stone", 1, 10, "stone fired within a mountain"],
   [6, "steel", "metal", 1, 15, "carbonized iron"],
-  [7, "orc_stone", "stone", 2, 17, "a tough stone from the land of orcs"],
+  [7, "orc stone", "stone", 2, 17, "a tough stone from the land of orcs"],
   [8, "titanium", "metal", 2, 21, "a strong metal found deep within the mountain"],
-  [9, "fey_wood", "wood", 2, 32, "wood from an enchanted forest"],
-  [10, "troll_bone", "stone", 2, 45, "bone of a mighty troll"],
+  [9, "fey wood", "wood", 2, 32, "wood from an enchanted forest"],
+  [10, "troll bone", "stone", 2, 45, "bone of a mighty troll"],
   [11, "mythril", "metal", 2, 55, "a mythical metal known for lightweight and strength"],
   [12, "hyperionite", "wood", 3, 75, "a mysterious metal from the hyperion lands"],
   [13, "adamantium", "metal", 3, 90, "metal purified by the gods"],
   [14, "necrosteel", "metal", 3, 110, "steel strengthened with mighty souls"],
-  [15, "dragon_bone", "stone", 3, 145, "bone of an ancient dragon"],
+  [15, "dragon bone", "stone", 3, 145, "bone of an ancient dragon"],
   [16, "bezaleel", "wood", 3, 200, "wood from the god tree"]
   ]
 }

@@ -57,6 +57,9 @@ export class GameData {
       GameData.findMagic(3),
       GameData.findMagic(4),
       GameData.findMagic(5),
+      GameData.findMagic(6),
+      GameData.findMagic(7),
+      GameData.findMagic(8),
     ];
     p.buildWeapon = null;
 

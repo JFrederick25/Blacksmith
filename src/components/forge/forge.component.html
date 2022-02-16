@@ -49,6 +49,7 @@
   <div class="chevronButton" (click)="setShowOption('magic')">Choose Magic
   <span *ngIf="!showMagic">&#9204;</span>
   <span *ngIf="showMagic">&#9207;</span>
+  <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.name}}</span>
   </div>
   <div *ngIf="showMagic">
     <hr>
@@ -70,6 +71,7 @@
   <p class="build">Weapon</p>
   <div class="buildOption">
     {{ selectedMaterial.name }} {{ selectedWeaponType.name }}
+    <span *ngIf="selectedMagic">of {{selectedMagic.name}}</span>
   </div>
   <button class="buildButton">Build Weapon</button>
 </div>
