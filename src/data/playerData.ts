@@ -24,6 +24,8 @@ export class PlayerData {
     this.weaponTypes = [];
     this.magicList = [];
     this.buildWeapons = [];
+    this.traders = [];
+    this.npcs = [];
   }
 
   // for loading/saving data
