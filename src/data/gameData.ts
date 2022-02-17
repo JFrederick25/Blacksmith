@@ -145,6 +145,13 @@ export class GameData {
           t.materials.push(new TraderMaterial(mData.name, mat[1], mData.price));
         }
       }
+
+      if (actor[5]) {
+        for(let wep of actor[5] as number[][]) {
+          const wData = GameData.findWeaponType(wep[0]);
+          t.weaponDesigns.push(wData);
+        }
+      }
       return t;
     }
     return null;
