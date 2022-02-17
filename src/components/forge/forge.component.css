@@ -1,14 +1,15 @@
 .selection {
   cursor: pointer;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .selection:hover {
   background-color: aquamarine;
 }
 
-.column {
+.selectionName {
   width:100px;
-  padding: 1px;
   text-align: center;
 }
 
@@ -40,6 +41,7 @@
 }
 
 .flavorText {
+  padding-left: 146px;
   font-size: small;
   margin: 0;
 }

@@ -5,7 +5,9 @@
     <span *ngIf="!showMaterials">&#9204;</span>
     <span *ngIf="showMaterials">&#9207;</span>
     <span style="padding-left: 20px;" *ngIf="selectedMaterial">{{selectedMaterial.name}}</span>
-    <p *ngIf="selectedMaterial" class="flavorText">{{selectedMaterial.material.description}}</p>
+    <span style="padding-left: 20px;" *ngIf="selectedMaterial">({{selectedMaterial.quantity}})</span>
+    <span style="padding-left: 20px;" *ngIf="selectedMaterial">+${{selectedMaterial.value}}</span>
+    <div *ngIf="selectedMaterial" class="flavorText">{{selectedMaterial.material.description}}</div>
   </div>
   <div *ngIf="showMaterials">
     <hr>
@@ -16,7 +18,7 @@
         [attr.style]="material === selectedMaterial ? 'border: 1px solid gray;' : ''"
         (click)="setSelectedMaterial(material)"
       >
-        <p class="column">{{ material.name }}</p>
+        <div class="selectionName"> {{ material.name }} </div>
       </td>
     </tr>
     <hr>
@@ -38,7 +40,7 @@
         [attr.style]="weapon === selectedWeaponType ? 'border: 1px solid gray;' : ''"
         (click)="setSelectedWeaponType(weapon)"
       >
-        <p class="column">{{weapon.name}}</p>
+        <div class="selectionName">{{weapon.name}}</div>
       </td>
     </tr>
     <hr>
@@ -60,7 +62,7 @@
         [attr.style]="magic === selectedMagic ? 'border: 1px solid gray;' : ''"
         (click)="setSelectedMagic(magic)"
       >
-        <p class="column">{{magic.name}}</p>
+        <div class="selectionName">{{magic.name}}</div>
       </td>
     </tr>
     <hr>
