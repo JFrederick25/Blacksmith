@@ -1,7 +1,26 @@
-<div class="options">
-  <p>Materials for sale</p>
-
-  <div *ngFor="let traderMaterial of activeTrader.materials">
-    {{traderMaterial.name}} {{traderMaterial.quantity}} ${{traderMaterial.material.price}}
-  </div>
+<div class="sectionTitle">Materials for sale</div>
+<div *ngIf="activeTrader.materials.length > 0">
+  <hr>
+  <tr>
+    <td class="column">Name</td>
+    <td class="column">Available</td>
+    <td class="column">Price</td>
+  </tr>
+  <tr class="selection" *ngFor="let traderMaterial of activeTrader.materials; let i=index;">
+    <td class="column">
+      {{i+1}}.
+      {{traderMaterial.name}}
+    </td>
+    <td class="column">
+      ({{traderMaterial.quantity}})
+    </td>
+    <td class="column">
+      ${{traderMaterial.material.price}}
+    </td>
+  </tr>
+  <hr>
 </div>
+
+<div class="sectionTitle">Magic Materials for sale</div>
+
+<div class="sectionTitle">Weapon Designs for sale</div>
