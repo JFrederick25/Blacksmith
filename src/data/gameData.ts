@@ -139,6 +139,7 @@ export class GameData {
       t.role = actor[2] as string;
       t.location = actor[3] as string;
       
+      // 4 is materials
       if (actor[4]) {
         for(let mat of actor[4] as number[][]) {
           const mData = GameData.findMaterial(mat[0]);
@@ -146,12 +147,19 @@ export class GameData {
         }
       }
 
-      if (actor[5]) {
-        for(let wep of actor[5] as number[][]) {
+      // 5 is magic materials
+
+      // 6 is weapon designs
+      if (actor[6]) {
+        for(let wep of actor[6] as number[][]) {
           const wData = GameData.findWeaponType(wep[0]);
           t.weaponDesigns.push(wData);
         }
       }
+
+      // 7 is magic magicSpells
+
+      // 8 is dialogs
       return t;
     }
     return null;
