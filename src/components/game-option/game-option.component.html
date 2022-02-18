@@ -9,10 +9,21 @@
   <p class="selection" (click)="loadGame()" (mouseover)="mover('load')" (mouseleave)="mover(null)">
   <span *ngIf="x === 'load'; else not">⬗</span>
     Load Game</p>
-  <br>
-  <textarea cols="32" rows="16" [(ngModel)]="tf"></textarea>
-  <p>Enter Data Text to load</p>
-  <p>copy and save Data Text to file to save</p>
+  <div>
+    <input
+      type="checkbox" 
+      style="margin-left:22px; cursor:pointer;" 
+      id="useLocalStorage"
+      [(ngModel)]="useLocalStorage"
+    > 
+    <label for="useLocalStorage" style=" cursor:pointer;"> Use local storage </label>
+  </div>
+  <div *ngIf=!useLocalStorage>
+    <br>
+    <textarea cols="32" rows="16" [(ngModel)]="tf"></textarea>
+    <br>
+    <button style="margin-left:22px" (click)="tf=''">Clear Text</button>
+  </div>
 </div>
 
 <ng-template #not>⬖</ng-template>

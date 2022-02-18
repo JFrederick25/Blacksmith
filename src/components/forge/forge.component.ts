@@ -1,14 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { BuildWeapon, Magic, MagicMaterial, PlayerMagicMaterial, PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
 import { PlayerData } from '../../data/playerData';
-
-function chunk(arr, chunkSize) {
-  if (chunkSize <= 0) throw 'Invalid chunk size';
-  var R = [];
-  for (var i = 0, len = arr.length; i < len; i += chunkSize)
-    R.push(arr.slice(i, i + chunkSize));
-  return R;
-}
+import { chunk } from '../../resources/utils/helper';
 
 @Component({
   selector: 'forge',

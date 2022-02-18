@@ -15,9 +15,9 @@ export class GameOptionComponent {
   x;
   mover(opt) {
     this.x = opt;
-
   }
 
+  useLocalStorage: boolean = true;
   tf = '';
 
   newGame() {
@@ -28,13 +28,23 @@ export class GameOptionComponent {
   saveGame() {
     let t = JSON.stringify(this.playerData);
     t += '|' + JSON.stringify(this.gameStateData);
-    this.tf = btoa(t);
+    
+    if (this.useLocalStorage) {
+      localStorage.setItem('BlackSmithLife', btoa(t));
+    } else {
+      this.tf = btoa(t);
+    }
   }
 
   loadGame() {
-    const data = atob(this.tf).split('|');
+    let data = null;
+    if (this.useLocalStorage) {
+      data = atob(localStorage.getItem('BlackSmithLife')).split('|');
+    } else {
+      data = atob(this.tf).split('|');
+      this.tf = '';
+    }
     PlayerData.setPlayerData(this.playerData, JSON.parse(data[0]));
     GameStateData.setGameStateData(this.gameStateData, JSON.parse(data[1]));
-    this.tf = '';
   }
 }
