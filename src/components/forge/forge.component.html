@@ -32,6 +32,9 @@
     <span *ngIf="!showWeapons">&#9204;</span>
     <span *ngIf="showWeapons">&#9207;</span>
     <span style="padding-left: 20px;" *ngIf="selectedWeaponType">{{selectedWeaponType.name}}</span>
+    <span style="padding-left: 20px;" *ngIf="selectedWeaponType && selectedMaterial">({{selectedMaterial.name}}</span>
+    <span style="padding-left: 5px;" *ngIf="selectedWeaponType && selectedMaterial">{{selectedMaterial.quantity}}/</span>
+    <span *ngIf="selectedWeaponType && selectedMaterial">{{selectedWeaponType.requiredMaterial}})</span>
   </div>
   <div *ngIf="showWeapons">
     <hr>
@@ -55,8 +58,9 @@
   <span *ngIf="!showMagic">&#9204;</span>
   <span *ngIf="showMagic">&#9207;</span>
   <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.name}}</span>
-  <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.magicMaterial.name}}</span>
-  <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.magicMaterialRequired}}</span>
+  <span style="padding-left: 20px;" *ngIf="selectedMagic">({{selectedMagic.magicMaterial.name}}</span>
+  <span style="padding-left: 5px;" *ngIf="selectedMagic">{{getPlayerMagicMaterial()?.quantity || 0}}/</span>
+  <span *ngIf="selectedMagic">{{selectedMagic.magicMaterialRequired}})</span>
   </div>
   <div *ngIf="showMagic">
     <hr>

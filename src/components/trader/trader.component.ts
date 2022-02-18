@@ -26,7 +26,7 @@ export class TraderComponent implements OnInit {
   showMagicSpells: boolean;
 
   getavailableWeaponDesigns(): TraderWeaponDesign[] {
-    return this.activeTrader.weaponDesigns.filter(w => w.quantity > 0);
+    return this.activeTrader.weaponDesigns.filter(w => w.quantity > 0 && !this.playerData.weaponTypes.some(wt => wt.name === w.name));
   }
 
   setShowOption(option: string) {

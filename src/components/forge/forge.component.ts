@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BuildWeapon, Magic, PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
+import { BuildWeapon, Magic, MagicMaterial, PlayerMagicMaterial, PlayerMaterial, WeaponType } from '../../data/interfaces/craftingInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 function chunk(arr, chunkSize) {
@@ -68,23 +68,45 @@ export class ForgeComponent {
     return chunk(this.playerData.magicList, 4);
   }
 
+  getPlayerMagicMaterial(): PlayerMagicMaterial {
+    return this.playerData.magicMaterials.find(mm => mm.name === this.selectedMagic.magicMaterial.name);
+  }
+
   buildWeapon() {
-    // if enough materials
-    // if enough magic materials
-    // consider adding string/sinew/wire/cord/cable, pegs/nails/rivets/bolts, cloth/skin/leather
-    const newWeapon = new BuildWeapon();
-    Object.assign(newWeapon.material, this.selectedMaterial.material);
-    Object.assign(newWeapon.weaponType, this.selectedWeaponType);
-    
-    if (this.selectedMagic) {
-      Object.assign(newWeapon.magic, this.selectedMagic);
+    if (
+      this.selectedMaterial.quantity - this.selectedWeaponType.requiredMaterial >= 0 &&
+      this.checkRequiredMagic()
+    ){
+      const newWeapon = new BuildWeapon();
+      Object.assign(newWeapon.material, this.selectedMaterial.material);
+      Object.assign(newWeapon.weaponType, this.selectedWeaponType);
+      this.selectedMaterial.quantity -= this.selectedWeaponType.requiredMaterial;
+      
+      if (this.selectedMagic) {
+        Object.assign(newWeapon.magic, this.selectedMagic);
+        const playerMagicMaterial = this.playerData.magicMaterials.find(mm => mm.name === this.selectedMagic.magicMaterial.name);
+        playerMagicMaterial.quantity -= this.selectedMagic.magicMaterialRequired;
+      }
+      
+      this.playerData.buildWeapons.push(newWeapon);
+      this.selectedMaterial = null;
+      this.selectedWeaponType = null;
+      this.selectedMagic = null;
+      
+      this.setShowOption(null);
     }
+  }
 
-    this.playerData.buildWeapons.push(newWeapon);
-    this.selectedMaterial = null;
-    this.selectedWeaponType = null;
-    this.selectedMagic = null;
-
-    this.setShowOption(null);
+  checkRequiredMagic(): boolean {
+    if (!this.selectedMagic) {
+      return true;
+    } else {
+      const playerMagicMaterial = this.playerData.magicMaterials.find(mm => mm.name === this.selectedMagic.magicMaterial.name);
+      if (playerMagicMaterial) {
+        return playerMagicMaterial.quantity - this.selectedMagic.magicMaterialRequired >= 0;
+      } else {
+        return false;
+      }
+    }
   }
 }
