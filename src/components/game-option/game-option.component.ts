@@ -19,6 +19,7 @@ export class GameOptionComponent {
 
   useLocalStorage: boolean = true;
   tf = '';
+  gameMessage = '';
 
   newGame() {
     GameData.resetPlayerData(this.playerData);
@@ -31,6 +32,9 @@ export class GameOptionComponent {
     
     if (this.useLocalStorage) {
       localStorage.setItem('BlackSmithLife', btoa(t));
+      
+      this.gameMessage = 'Game Saved';
+      setTimeout(() => this.gameMessage = '', 3000);
     } else {
       this.tf = btoa(t);
     }
@@ -46,5 +50,8 @@ export class GameOptionComponent {
     }
     PlayerData.setPlayerData(this.playerData, JSON.parse(data[0]));
     GameStateData.setGameStateData(this.gameStateData, JSON.parse(data[1]));
+
+    this.gameMessage = 'Game Loaded';
+    setTimeout(() => this.gameMessage = '', 3000);
   }
 }
