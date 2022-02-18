@@ -1,21 +1,21 @@
 {
   "weaponTypes": [
-    ["ID", "name", "value"],
-    [1, "club", 1],
-    [2, "dagger", 2],
-    [3, "short sword", 3],
-    [4, "axe", 3],
-    [5, "staff", 3],
-    [6, "longsword", 5],
-    [7, "battleaxe", 5],
-    [8, "spear", 9],
-    [9, "mace", 9],
-    [10, "schnecht-macher", 13],
-    [11, "war axe", 15],
-    [12, "partisan", 13],
-    [13, "morning star", 11],
-    [14, "giant sword", 17],
-    [15, "bardiche", 19],
-    [16, "maul", 17]
+    ["ID", "name", "value", "required quantity"],
+    [1, "club", 1, 1],
+    [2, "dagger", 2, 1],
+    [3, "short sword", 3, 1],
+    [4, "axe", 3, 1],
+    [5, "staff", 3, 1],
+    [6, "longsword", 5, 2],
+    [7, "battleaxe", 5, 2],
+    [8, "spear", 9, 2],
+    [9, "mace", 9, 2],
+    [10, "schnecht-macher", 13, 3],
+    [11, "war axe", 15, 3],
+    [12, "partisan", 13, 3],
+    [13, "morning star", 11, 3],
+    [14, "giant sword", 17, 4],
+    [15, "bardiche", 19, 4],
+    [16, "maul", 17, 4]
   ]
 }

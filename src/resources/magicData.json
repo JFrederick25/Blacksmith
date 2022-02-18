@@ -9,5 +9,12 @@
     [6, "necrosis", 2, 600, "bonemeal", 2],
     [7, "chaos", 3, 950, "star dust", 3],
     [8, "divine power", 3, 1000, "aulm", 3]
+  ],
+  "magicMaterials": [
+    ["ID", "name", "price", "rank"],
+    [1, "salt", 50, 1],
+    [1, "frost", 200, 1],
+    [1, "down", 770, 2],
+    [1, "vapor", 1550, 2]
   ]
 }

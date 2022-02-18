@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PlayerMaterial } from '../../data/interfaces/craftingInterfaces';
-import { Trader, TraderMaterial } from '../../data/interfaces/traderInterfaces';
+import { Trader, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 @Component({
@@ -24,6 +24,10 @@ export class TraderComponent implements OnInit {
   showMagicMaterials: boolean;
   showWeaponDesigns: boolean;
   showMagicSpells: boolean;
+
+  getavailableWeaponDesigns(): TraderWeaponDesign[] {
+    return this.activeTrader.weaponDesigns.filter(w => w.quantity > 0);
+  }
 
   setShowOption(option: string) {
     this.showMaterials = option === 'materials' ? !this.showMaterials : false;
@@ -64,6 +68,14 @@ export class TraderComponent implements OnInit {
       } else {
         playerMaterial.quantity++;
       }
+    }
+  }
+
+  buyWeaponDesign(weaponDesign: TraderWeaponDesign) {
+    if (this.playerData.money - weaponDesign.price > 0) {
+      weaponDesign.quantity--;
+      this.playerData.money -= weaponDesign.price;
+      this.playerData.weaponTypes.push(weaponDesign.weapontype);
     }
   }
 }

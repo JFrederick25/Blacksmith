@@ -4,7 +4,7 @@ import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
 import * as magicGameData from '../resources/magicData.json';
 import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
-import { Npc, Trader, TraderMaterial } from './interfaces/traderInterfaces';
+import { Npc, Trader, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
 import { NgForOf } from '@angular/common';
 
 export class GameData {
@@ -153,7 +153,10 @@ export class GameData {
       if (actor[6]) {
         for(let wep of actor[6] as number[][]) {
           const wData = GameData.findWeaponType(wep[0]);
-          t.weaponDesigns.push(wData);
+          const weaponDesign = new TraderWeaponDesign(wData.name, wep[1]);
+          weaponDesign.weapontype = wData;
+          weaponDesign.quantity = 1;
+          t.weaponDesigns.push(weaponDesign);
         }
       }
 

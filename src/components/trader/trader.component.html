@@ -41,8 +41,35 @@
   <div class="sectionTitle">Magic Materials for sale</div>
 </div>
 
-<div *ngIf="activeTrader.weaponDesigns.length > 0">
-  <div class="sectionTitle">Weapon Designs for sale</div>
+<div *ngIf="getavailableWeaponDesigns().length > 0">
+  <div class="sectionTitle" (click)="setShowOption('weaponDesigns')">Weapon Designs for sale
+    <span *ngIf="!showWeaponDesigns">&#9204;</span>
+    <span *ngIf="showWeaponDesigns">&#9207;</span>
+  </div>
+  <div *ngIf="showWeaponDesigns">
+    <hr>
+    <tr>
+      <td class="column">Name</td>
+      <td class="column">Price</td>
+    </tr>
+    <tr class="selection" *ngFor="let weaponDesign of getavailableWeaponDesigns(); let i=index;">
+      <td class="column">
+        {{i+1}}.
+        {{weaponDesign.name}}
+      </td>
+      <td class="column">
+        <div style="display:flex" >
+          <div>
+            ${{weaponDesign.price}}
+          </div>
+          <div style="padding-left:20px">
+            <button style="padding:0 5px;" (click)="buyWeaponDesign(weaponDesign)">+</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <hr>
+  </div>
 </div>
 
 <div *ngIf="activeTrader.magicSpells.length > 0">

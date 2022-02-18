@@ -71,7 +71,7 @@ export class ForgeComponent {
   buildWeapon() {
     // if enough materials
     // if enough magic materials
-    // consider adding string/sinew/wire, pegs/nails/rivets, cloth/skin/leather
+    // consider adding string/sinew/wire/cord/cable, pegs/nails/rivets/bolts, cloth/skin/leather
     const newWeapon = new BuildWeapon();
     Object.assign(newWeapon.material, this.selectedMaterial.material);
     Object.assign(newWeapon.weaponType, this.selectedWeaponType);
