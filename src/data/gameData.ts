@@ -3,8 +3,8 @@ import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
 import * as magicGameData from '../resources/magicData.json';
-import { Magic, Material, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
-import { Npc, Trader, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
+import { Magic, MagicMaterial, Material, PlayerMagicMaterial, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
+import { Npc, Trader, TraderMagicMaterial, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
 import { NgForOf } from '@angular/common';
 
 export class GameData {
@@ -12,6 +12,7 @@ export class GameData {
   static readonly weaponData = weaponGameData.weaponTypes;
   static readonly actorsData = actorGameData.actors;
   static readonly magicData = magicGameData.magic;
+  static readonly magicMaterialData = magicGameData.magicMaterials;
 
   static resetPlayerData(p: PlayerData) {
     p.money = 30;
@@ -33,6 +34,9 @@ export class GameData {
       // GameData.setPMaterial(14, 0),
       // GameData.setPMaterial(15, 0),
       // GameData.setPMaterial(16, 0),
+    ];
+    p.magicMaterials = [
+      GameData.setPMagicMaterial(1, 2),
     ];
     p.weaponTypes = [
       GameData.findWeaponType(1), 
@@ -94,6 +98,18 @@ export class GameData {
     return null;
   }
 
+  static setPMagicMaterial(index: number, q?: number): PlayerMagicMaterial {
+    const magicMaterial = GameData.findMagicMaterial(index);
+    if (magicMaterial) {
+      const pmm = new PlayerMagicMaterial(magicMaterial.name, q || 0);
+      pmm.magicMaterial = magicMaterial;
+      
+      pmm.value = pmm.magicMaterial.value;
+      return pmm;
+    }
+    return null;
+  }
+
   static findMaterial(index: number): Material {
     const matData = GameData.materialData[index];
     if (matData) {
@@ -113,7 +129,9 @@ export class GameData {
     if (wData) {
       const w = new WeaponType();
       w.name = wData[1] as string;
-      w.value = wData[2] as number;
+      w.rank = wData[2] as number;
+      w.value = wData[3] as number;
+      w.requiredMaterial = wData[4] as number;
       return w;
     }
     return null;
@@ -126,7 +144,21 @@ export class GameData {
       m.name = mData[1] as string;
       m.rank = mData[2] as number;
       m.value = mData[3] as number;
+      m.magicMaterial = GameData.findMagicMaterial(mData[4] as number);
+      m.magicMaterialRequired = mData[5] as number;
       return m;
+    }
+    return null;
+  }
+
+  static findMagicMaterial(index: number): MagicMaterial {
+    const mmData = GameData.magicMaterialData[index];
+    if (mmData) {
+      const mm = new MagicMaterial();
+      mm.name = mmData[1] as string;
+      mm.rank = mmData[2] as number;
+      mm.value = mmData[3] as number;
+      return mm;
     }
     return null;
   }
@@ -148,6 +180,14 @@ export class GameData {
       }
 
       // 5 is magic materials
+      if (actor[5]) {
+        for(let mm of actor[5] as number [][]) {
+          const mmData = GameData.findMagicMaterial(mm[0]);
+          const tmm = new TraderMagicMaterial(mmData.name, mmData.value, mm[1]);
+          tmm.magicMaterial = mmData;
+          t.magicMaterials.push(tmm);
+        }
+      }
 
       // 6 is weapon designs
       if (actor[6]) {

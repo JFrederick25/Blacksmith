@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayerMaterial } from '../../data/interfaces/craftingInterfaces';
-import { Trader, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
+import { PlayerMagicMaterial, PlayerMaterial } from '../../data/interfaces/craftingInterfaces';
+import { Trader, TraderMagicMaterial, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 @Component({
@@ -36,12 +36,20 @@ export class TraderComponent implements OnInit {
     this.showMagicSpells = option === 'magicSpells' ? !this.showMagicSpells : false;
   }
 
-  getPlayerItemInventory(traderMaterial: TraderMaterial): number {
+  getPlayerMaterialInventory(traderMaterial: TraderMaterial): number {
     const playerMaterial = this.playerData.materials.find(
       (m) => m.name === traderMaterial.name
     );
 
     return playerMaterial ? playerMaterial.quantity : 0;
+  }
+
+  getPlayerMagicMaterialInventory(traderMagicMaterial: TraderMagicMaterial): number {
+    const playerMagicMaterial = this.playerData.magicMaterials.find(
+      (mm) => mm.name === traderMagicMaterial.name
+    );
+
+    return playerMagicMaterial ? playerMagicMaterial.quantity : 0;
   }
 
   buyMaterial(traderMaterial: TraderMaterial) {
@@ -67,6 +75,32 @@ export class TraderComponent implements OnInit {
         );
       } else {
         playerMaterial.quantity++;
+      }
+    }
+  }
+
+  buyMagicMaterial(traderMagicMaterial: TraderMagicMaterial) {
+    if (
+      this.playerData.money - traderMagicMaterial.price > 0 &&
+      traderMagicMaterial.quantity > 0
+    ) {
+      traderMagicMaterial.quantity--;
+      this.playerData.money -= traderMagicMaterial.price;
+
+      const playerMagicMaterial = this.playerData.magicMaterials.find(
+        (m) => m.name === traderMagicMaterial.name
+      );
+      // if new player material add to array
+      if (!playerMagicMaterial) {
+        this.playerData.magicMaterials.push(
+          new PlayerMagicMaterial(
+            traderMagicMaterial.name,
+            1,
+            traderMagicMaterial.price
+          )
+        );
+      } else {
+        playerMagicMaterial.quantity++;
       }
     }
   }

@@ -1,5 +1,6 @@
 <p class="title">Forge</p>
 
+<!--Materials-->
 <div *ngIf="playerData && playerData.materials">
   <div class="chevronButton" (click)="setShowOption('materials')">Choose Material
     <span *ngIf="!showMaterials">&#9204;</span>
@@ -25,6 +26,7 @@
   </div>
 </div>
 
+<!--Weapon Types-->
 <div *ngIf="playerData && playerData.weaponTypes">
   <div class="chevronButton" (click)="setShowOption('weapons')">Choose Weapon
     <span *ngIf="!showWeapons">&#9204;</span>
@@ -47,11 +49,14 @@
   </div>
 </div>
 
+<!--Magic-->
 <div *ngIf="playerData && playerData.magicList">
   <div class="chevronButton" (click)="setShowOption('magic')">Choose Magic
   <span *ngIf="!showMagic">&#9204;</span>
   <span *ngIf="showMagic">&#9207;</span>
   <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.name}}</span>
+  <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.magicMaterial.name}}</span>
+  <span style="padding-left: 20px;" *ngIf="selectedMagic">{{selectedMagic.magicMaterialRequired}}</span>
   </div>
   <div *ngIf="showMagic">
     <hr>

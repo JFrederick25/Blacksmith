@@ -1,4 +1,4 @@
-import { Magic, Material, WeaponType } from "./craftingInterfaces";
+import { Magic, MagicMaterial, Material, WeaponType } from "./craftingInterfaces";
 
 export class Actor {
   name: string;
@@ -36,9 +36,22 @@ export class TraderWeaponDesign {
   }
 }
 
+export class TraderMagicMaterial {
+  name: string;
+  magicMaterial: MagicMaterial;
+  price: number;
+  quantity: number;
+
+  constructor(name: string, price?: number, quantity?: number) {
+    this.name = name;
+    this.price = price || 0;
+    this.quantity = quantity || 0;
+  }
+}
+
 export class Trader extends Actor {
   materials: TraderMaterial[];
-  magicMaterials: string[];
+  magicMaterials: TraderMagicMaterial[];
   weaponDesigns: TraderWeaponDesign[];
   magicSpells: Magic[];
 
