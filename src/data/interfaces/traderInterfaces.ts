@@ -54,6 +54,7 @@ export class Trader extends Actor {
   magicMaterials: TraderMagicMaterial[];
   weaponDesigns: TraderWeaponDesign[];
   magicSpells: Magic[];
+  dialog: string[];
 
   constructor() {
     super();
@@ -61,6 +62,7 @@ export class Trader extends Actor {
     this.magicMaterials = [];
     this.weaponDesigns = [];
     this.magicSpells = [];
+    this.dialog = [];
   }
 }
 

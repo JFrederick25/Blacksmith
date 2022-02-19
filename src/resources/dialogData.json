@@ -1,0 +1,6 @@
+{
+  "dialogs": [
+    ["ID", "dialog", "options", "responses"],
+    [1, "Do you know the forest?", [[1, "yes"], [2, "no"]], [[1, "Careful out there"], [2, "East of the city is the dark forest, Careful out there"]]]
+  ]
+}
