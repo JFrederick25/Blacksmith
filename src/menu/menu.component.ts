@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { GameStateData } from '../data/gameStateData';
 
 @Component({
   selector: 'menu',

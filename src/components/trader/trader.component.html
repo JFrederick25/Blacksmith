@@ -81,7 +81,7 @@
 </div>
 
 <!--Weapon Designs-->
-<div *ngIf="getavailableWeaponDesigns().length > 0">
+<div *ngIf="getAvailableWeaponDesigns().length > 0">
   <div class="sectionTitle" (click)="setShowOption('weaponDesigns')">Weapon Designs for sale
     <span *ngIf="!showWeaponDesigns">&#9204;</span>
     <span *ngIf="showWeaponDesigns">&#9207;</span>
@@ -92,7 +92,7 @@
       <td class="column">Name</td>
       <td class="column">Price</td>
     </tr>
-    <tr class="selection" *ngFor="let weaponDesign of getavailableWeaponDesigns(); let i=index;">
+    <tr class="selection" *ngFor="let weaponDesign of getAvailableWeaponDesigns(); let i=index;">
       <td class="column">
         {{i+1}}.
         {{weaponDesign.name}}
@@ -113,6 +113,33 @@
 </div>
 
 <!--Magic Spells-->
-<div *ngIf="activeTrader.magicSpells.length > 0">
-  <div class="sectionTitle">Magic Spells for sale</div>
+<div *ngIf="getAvailableMagicSpells().length > 0">
+  <div class="sectionTitle" (click)="setShowOption('magicSpells')">Magic Spells for sale
+  <span *ngIf="!showMagicSpells">&#9204;</span>
+  <span *ngIf="showMagicSpells">&#9207;</span>
+</div>
+<div *ngIf="showMagicSpells">
+<hr>
+<tr>
+  <td class="column">Name</td>
+  <td class="column">Price</td>
+</tr>
+<tr class="selection" *ngFor="let magic of getAvailableMagicSpells(); let i=index;">
+  <td class="column">
+    {{i+1}}.
+    {{magic.name}}
+  </td>
+  <td class="column">
+    <div style="display:flex" >
+      <div>
+        ${{magic.price}}
+      </div>
+      <div style="padding-left:20px">
+        <button style="padding:0 5px;">+</button>
+      </div>
+    </div>
+  </td>
+</tr>
+<hr>
+</div>
 </div>

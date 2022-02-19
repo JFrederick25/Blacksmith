@@ -1,6 +1,6 @@
 <!--MAP-->
 <div *ngIf="!selectedLocation">
-  <h3 class="title">Map Locations</h3>
+  <div class="title">Map Locations</div>
   <tr *ngFor="let locRow of getLocationRow()">
     <td
       [attr.style]="loc === selectedLocation ? 'border: 1px solid gray;' : ''"
@@ -8,17 +8,17 @@
       *ngFor="let loc of locRow"
       (click)="setSelectedLocation(loc)"
     >
-      <p class="column">{{ loc }}</p>
+      <div class="column">{{ loc }}</div>
     </td>
   </tr>
 </div>
 
 <!--LOCATION-->
 <div *ngIf="selectedLocation && !selectedActor">
-  <p class="title">
+  <div class="title">
   <span class="back" (click)="setSelectedLocation(selectedLocation)">&#8678;</span>
     {{ selectedLocation }}
-  </p>
+  </div>
   <tr *ngFor="let actorRow of getActorRow()">
     <td 
     [attr.style]="actor === selectedActor ? 'border: 1px solid gray;' : ''"
@@ -26,17 +26,17 @@
     *ngFor="let actor of actorRow"
     (click)="setSelectedActor(actor)"
     >
-      <p class="column"> {{ actor.name }} </p>
+      <div class="column"> {{ actor.name }} </div>
     </td>
   </tr>
 </div>
 
 <!--ACTOR-->
 <div *ngIf="selectedActor">
-  <p class="title"> 
+  <div class="title"> 
     <span class="back" (click)="setSelectedActor(selectedActor)">&#8678;</span>
     {{ selectedActor.name }}
-  </p>
+  </div>
   <trader
     *ngIf="selectedActor.role === 'trader'" 
     [playerData]="_playerData" 

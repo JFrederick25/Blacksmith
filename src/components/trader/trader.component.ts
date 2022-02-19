@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PlayerMagicMaterial, PlayerMaterial } from '../../data/interfaces/craftingInterfaces';
-import { Trader, TraderMagicMaterial, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
+import { Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 @Component({
@@ -25,8 +25,14 @@ export class TraderComponent implements OnInit {
   showWeaponDesigns: boolean;
   showMagicSpells: boolean;
 
-  getavailableWeaponDesigns(): TraderWeaponDesign[] {
-    return this.activeTrader.weaponDesigns.filter(w => w.quantity > 0 && !this.playerData.weaponTypes.some(wt => wt.name === w.name));
+  getAvailableWeaponDesigns(): TraderWeaponDesign[] {
+    return this.activeTrader.weaponDesigns
+      .filter(w => w.quantity > 0 && !this.playerData.weaponTypes.some(wt => wt.name === w.name));
+  }
+
+  getAvailableMagicSpells(): TraderMagicSpell[] {
+    return this.activeTrader.magicSpells
+      .filter(m => m.quantity > 0 && !this.playerData.magicList.some(mag => mag.name === m.name));
   }
 
   setShowOption(option: string) {

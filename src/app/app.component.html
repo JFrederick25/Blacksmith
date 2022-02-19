@@ -27,14 +27,8 @@
     <div *ngIf="gameStateData.selected === 'map'">
       <map [playerData]="playerData" [gameStateData]="gameStateData"></map>
     </div>
-    <div *ngIf="gameStateData.selected === 'crafting skills'">
-      <crafting-skills></crafting-skills>
-    </div>
-    <div *ngIf="gameStateData.selected === 'trading skills'">
-      <trading-skills></trading-skills>
-    </div>
-    <div *ngIf="gameStateData.selected === 'magic skills'">
-      <magic-skills></magic-skills>
+    <div *ngIf="gameStateData.selected === 'skills'">
+      <skills></skills>
     </div>
   </div>
 </div>

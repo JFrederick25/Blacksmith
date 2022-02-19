@@ -9,7 +9,8 @@
 
 .column {
   width:120px;
-  padding: 1px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   text-align: center;
 }
 

@@ -14,6 +14,7 @@ import { CraftingSkillsComponent } from '../components/crafting-skills/crafting-
 import { TradingSkillsComponent } from '../components/trading-skills/trading-skills.component';
 import { MagicSkillsComponent } from '../components/magic-skills/magic-skills.component';
 import { NpcComponent } from '../components/npc/npc.component';
+import { SkillsComponent } from '../components/skills/skills.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -30,6 +31,7 @@ import { NpcComponent } from '../components/npc/npc.component';
     CraftingSkillsComponent,
     TradingSkillsComponent,
     MagicSkillsComponent,
+    SkillsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
