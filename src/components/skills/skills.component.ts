@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SkillsComponent  {
   showSkill = '';
-
+  x;
+  mover(opt) {
+    this.x = opt;
+  }
 }

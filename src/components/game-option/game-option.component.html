@@ -1,18 +1,21 @@
 <p class="title">Game Options</p>
 <div class="options">
-  <p class="selection" (click)="newGame()" (mouseover)="mover('new')" (mouseleave)="mover(null)">
+  <div class="selection" (click)="newGame()" (mouseover)="mover('new')" (mouseleave)="mover(null)">
     <span *ngIf="x === 'new'; else not">⬗</span>
-    New Game</p>
-  <p class="selection" (click)="saveGame()" (mouseover)="mover('save')" (mouseleave)="mover(null)">
+    New Game
+  </div>
+  <div class="selection" (click)="saveGame()" (mouseover)="mover('save')" (mouseleave)="mover(null)">
   <span *ngIf="x === 'save'; else not">⬗</span>
-    Save Game</p>
-  <p class="selection" (click)="loadGame()" (mouseover)="mover('load')" (mouseleave)="mover(null)">
+    Save Game
+  </div>
+  <div class="selection" (click)="loadGame()" (mouseover)="mover('load')" (mouseleave)="mover(null)">
   <span *ngIf="x === 'load'; else not">⬗</span>
-    Load Game</p>
+    Load Game
+  </div>
   <div>
     <input
       type="checkbox" 
-      style="margin-left:22px; cursor:pointer;" 
+      style="margin-left:22px; margin-top:20px; cursor:pointer;" 
       id="useLocalStorage"
       [(ngModel)]="useLocalStorage"
     > 

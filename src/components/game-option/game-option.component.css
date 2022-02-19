@@ -1,7 +1,7 @@
 .selection {
   cursor: pointer;
-  width: 120px;
-  padding-left: 20px;
+  width: 160px;
+  padding: 20px;
 }
 
 .selection:hover {

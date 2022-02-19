@@ -1,14 +1,10 @@
 .selection {
   cursor: pointer;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 20px;
   margin-top: 3px;
   margin-left: 10px;
-  width: 240px;
-  text-align: center;
+  width: 160px;
   font-size: large;
-  border: 1px solid;
-  border-radius: 10px;
 }
 
 .selection:hover {

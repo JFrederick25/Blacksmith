@@ -2,7 +2,7 @@
 
 <!--Materials-->
 <div *ngIf="activeTrader.materials.length > 0">
-  <div class="sectionTitle" (click)="setShowOption('materials')">Materials for sale
+  <div class="sectionTitle forSale" (click)="setShowOption('materials')">Materials for sale
     <span *ngIf="!showMaterials">&#9204;</span>
     <span *ngIf="showMaterials">&#9207;</span>
   </div>
@@ -42,7 +42,7 @@
 
 <!--Magic Materials-->
 <div *ngIf="activeTrader.magicMaterials.length > 0">
-  <div class="sectionTitle" (click)="setShowOption('magicMaterials')">Magic Materials for sale
+  <div class="sectionTitle forSale" (click)="setShowOption('magicMaterials')">Magic Materials for sale
     <span *ngIf="!showMagicMaterials">&#9204;</span>
     <span *ngIf="showMagicMaterials">&#9207;</span>
   </div>
@@ -82,7 +82,7 @@
 
 <!--Weapon Designs-->
 <div *ngIf="getAvailableWeaponDesigns().length > 0">
-  <div class="sectionTitle" (click)="setShowOption('weaponDesigns')">Weapon Designs for sale
+  <div class="sectionTitle forSale" (click)="setShowOption('weaponDesigns')">Weapon Designs for sale
     <span *ngIf="!showWeaponDesigns">&#9204;</span>
     <span *ngIf="showWeaponDesigns">&#9207;</span>
   </div>
@@ -114,7 +114,7 @@
 
 <!--Magic Spells-->
 <div *ngIf="getAvailableMagicSpells().length > 0">
-  <div class="sectionTitle" (click)="setShowOption('magicSpells')">Magic Spells for sale
+  <div class="sectionTitle forSale" (click)="setShowOption('magicSpells')">Magic Spells for sale
   <span *ngIf="!showMagicSpells">&#9204;</span>
   <span *ngIf="showMagicSpells">&#9207;</span>
 </div>
