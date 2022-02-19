@@ -49,11 +49,24 @@ export class TraderMagicMaterial {
   }
 }
 
+export class TraderMagicSpell {
+  name: string;
+  Magic: Magic;
+  price: number;
+  quantity: number;
+  
+  constructor(name: string, price?: number) {
+    this.name = name;
+    this.price = price || 0;
+    this.quantity = 0;
+  }
+}
+
 export class Trader extends Actor {
   materials: TraderMaterial[];
   magicMaterials: TraderMagicMaterial[];
   weaponDesigns: TraderWeaponDesign[];
-  magicSpells: Magic[];
+  magicSpells: TraderMagicSpell[];
   dialog: string[];
 
   constructor() {

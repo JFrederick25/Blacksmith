@@ -4,8 +4,7 @@ import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
 import * as magicGameData from '../resources/magicData.json';
 import { Magic, MagicMaterial, Material, PlayerMagicMaterial, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
-import { Npc, Trader, TraderMagicMaterial, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
-import { NgForOf } from '@angular/common';
+import { Npc, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -201,6 +200,15 @@ export class GameData {
       }
 
       // 7 is magic magicSpells
+      if (actor[7]) {
+        for(let mag of actor[7] as number[][]) {
+          const magData = GameData.findMagic(mag[0]);
+          const traderMagic = new TraderMagicSpell(magData.name, mag[1]);
+          traderMagic.Magic = magData;
+          traderMagic.quantity = 1;
+          t.magicSpells.push(traderMagic);
+        }
+      }
 
       // 8 is dialogs
       return t;
