@@ -1,6 +1,15 @@
 {
   "dialogs": [
-    ["ID", "dialog", "options", "responses"],
-    [1, "Do you know the forest?", [[1, "yes"], [2, "no"]], [[1, "Careful out there"], [2, "East of the city is the dark forest, Careful out there"]]]
+    ["ID", "dialog", "requirement for dialog", "options ?"],
+    [1, "There's a rogue in the forest camp that sells goods", ["reputation", 2]],
+    [2, "There's a trader from a mine in the mountains", ["reputation", 3]],
+    [3, "Do you know the Noble Merchant? He has high quality goods", ["reputation", 4]],
+    [4, "The Knight's Guild Quartermaster has access to many rare materials", ["trade", 1, ["material", 6], ["weaponType", 6]]],
+    [5, "The King's Consort has requested you", ["reputation", 6]],
+    [6, "You have been granted access to the King's Treasurer", ["trade", 6, ["material", 8], ["weaponType", 8]]],
+    [7, "The King's Treasury is in need. Will you help?", ["trade", 10, ["material", 11]]],
+    [7, "The King has personally requested you", ["reputation", 8]],
+    [8, "Do you know the Baracks Store? The fort is just up the road", ["reputation", 4]],
+    [9]
   ]
 }

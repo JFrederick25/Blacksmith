@@ -28,31 +28,25 @@
       [],
       []
     ],
-    [4, "Knight Guild Quartermaster", "trader", "castle",
+    [4, "Knight's Guild Quartermaster", "trader", "castle",
       [],
       [],
       [],
       [],
       []
     ],
-    [5, "King Castle Treasurer", "trader", "castle",
+    [5, "King's Treasurer", "trader", "castle",
       [],
       [],
       [],
       [],
       []
     ],
-    [6, "King Consort", "npc", "castle",
-      [],
-      [],
-      [],
+    [6, "King's Consort", "npc", "castle",
       [],
       []
     ],
     [7, "The King", "npc", "castle",
-      [],
-      [],
-      [],
       [],
       []
     ],
@@ -63,7 +57,7 @@
       [],
       []
     ],
-    [9, "Baracks Store", "trader", "mountain",
+    [9, "Baracks Store", "trader", "Fort",
       [],
       [],
       [],
@@ -77,24 +71,111 @@
       [],
       []
     ],
-    [11, "Forest Rogue", "trader", "forest",
+    [
+      11, "Lance Captain", "npc", "fort",
+      [],
+      []
+    ],
+    [
+      12, "Fort Commander", "npc", "fort",
+      [],
+      []
+    ],
+    [
+      13, "orc Trader", "trader", "orc camp",
       [],
       [],
       [],
       [],
       []
     ],
-    [12, "Church Priest", "trader", "forest",
+    [
+      14, "orc chief", "npc", "orc camp",
+      [],
+      []
+    ],
+    [
+      15, "dragon's familiar", "trader", "mountain",
       [],
       [],
       [],
       [],
       []
     ],
-    [13, "Witch", "trader", "forest",
+    [
+      16, "Ancient Dragon", "npc", "secret dragon's lair",
+      [],
+      []
+    ],
+    [17, "Rogue", "npc", "forest camp",
       [],
       [],
       [],
+      [],
+      []
+    ],
+    [
+      18, "caravan trader", "trader", "forest camp",
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      19, "elf thief", "npc", "forest camp",
+      [],
+      []
+    ],
+    [20, "Monk trader", "trader", "forest camp",
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      21, "Abbott Gregory", "npc", "forest Monastery",
+      [],
+      []
+    ],
+    [
+      22, "Apostate", "npc", "chapel hidden in the leaves",
+      [],
+      []
+    ],
+    [
+      23, "elf blacksmith", "trader", "Avalone",
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      24, "elf councilor", "npc", "Avalone",
+      [],
+      []
+    ],
+    [
+      25, "elf princess", "npc", "Avalone",
+      [],
+      []
+    ],
+    [
+      26, "Fairy princess", "npc", "dark forest",
+      [],
+      []
+    ],
+    [27, "Witch", "trader", "dark forest",
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      28, "swamp troll", "npc", "dark forest",
       [],
       []
     ]

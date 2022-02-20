@@ -20,14 +20,14 @@
   ],
   "finish": [
     ["id", "name", "base type", "crafting rank", "price", "description"],
-    [17, "string", "finish", 1, 10, "cotton or wool twine used to bind or connect"],
-    [18, "peg", "finish", 1, 20, "short wooden dowel used to hold pieces together"],
-    [19, "cloth", "finish", 1, 30, "a covering made from woven fiber"],
-    [20, "sinew", "finish", 2, 50, "animal muscle fiber, stronger than string"],
-    [21, "nail", "finish", 2, 60, "a metal spike hammered into place"],
-    [22, "skin", "finish", 2, 80, "the skin of an animal, stretched to cover"],
-    [23, "wire", "finish", 3, 100, "a very strong thin metal string"],
-    [24, "rivet", "finish", 3, 120, "a metal plug pressed into shape"],
-    [25, "leather", "finish", 3, 180, "dried and tanned skin"]
+    [1, "string", "finish", 1, 10, "cotton or wool twine used to bind or connect"],
+    [2, "peg", "finish", 1, 20, "short wooden dowel used to hold pieces together"],
+    [3, "cloth", "finish", 1, 30, "a covering made from woven fiber"],
+    [4, "sinew", "finish", 2, 50, "animal muscle fiber, stronger than string"],
+    [5, "nail", "finish", 2, 60, "a metal spike hammered into place"],
+    [6, "skin", "finish", 2, 80, "the skin of an animal, stretched to cover"],
+    [7, "wire", "finish", 3, 100, "a very strong thin metal string"],
+    [8, "rivet", "finish", 3, 120, "a metal plug pressed into shape"],
+    [9, "leather", "finish", 3, 180, "dried and tanned skin"]
   ]
 }

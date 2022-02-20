@@ -80,8 +80,8 @@ export class GameData {
     ];
 
     p.npcs = [
-      GameData.findNpc(6), // king consort
-      GameData.findNpc(7), // the king
+      // GameData.findNpc(6), // king consort
+      // GameData.findNpc(7), // the king
     ]
   }
 
