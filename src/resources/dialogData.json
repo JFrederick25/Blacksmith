@@ -1,15 +1,51 @@
 {
   "dialogs": [
-    ["ID", "dialog", "requirement for dialog", "options ?"],
-    [1, "There's a rogue in the forest camp that sells goods", ["reputation", 2]],
-    [2, "There's a trader from a mine in the mountains", ["reputation", 3]],
-    [3, "Do you know the Noble Merchant? He has high quality goods", ["reputation", 4]],
-    [4, "The Knight's Guild Quartermaster has access to many rare materials", ["trade", 1, ["material", 6], ["weaponType", 6]]],
-    [5, "The King's Consort has requested you", ["reputation", 6]],
-    [6, "You have been granted access to the King's Treasurer", ["trade", 6, ["material", 8], ["weaponType", 8]]],
-    [7, "The King's Treasury is in need. Will you help?", ["trade", 10, ["material", 11]]],
-    [7, "The King has personally requested you", ["reputation", 8]],
-    [8, "Do you know the Baracks Store? The fort is just up the road", ["reputation", 4]],
-    [9]
+    ["ID", "dialog"],
+    [1, "Welcome Blacksmith. What do you need?"],
+    [2, "How can I help you, commoner?"],
+    [3, "The King's time is precious. Make it fast."],
+    [4, "Your King welcomes you."],
+    [5, "The mines are a unforgining type. Watcha need?"],
+    [101, "There's a caravan trader that passes by a forest camp. They often have goods from other lands."],
+    [201, "There's a trader from a mine in the mountains. They sell quality ores."],
+    [202, "Do you know the Noble Merchant? He has high quality goods for sale."],
+    [301, "Sell me a steel sword, and I will recommend your work to the Knight's Guild."],
+    [302, "Talk to the Knight's Guild Quartermaster at the castle."],
+    [401, "Our arms are old and unrepairable."],
+    [402, "We can complete our quests now because of you. We offer our many thanks."],
+    [403, "The King's Consort has requested your service, a reward is offered."],
+    [501, "The King's treasury needs more precious materials."],
+    [502, "This supplement has ensured the stability of the King's rule. You have suerved your King well."],
+    [601, "Help the King's treasurer, The kingdom is relying on you."],
+    [602, "The King thanks you for your service. Your reward is given."],
+    [603, "The King has requested your presence. Please do not tarry long."],
+    [701, "My soldiers stationed at the fort by the mountain could use your help."],
+    [801, ]
+    
+  ],
+  "quests": [
+    ["id", "unlock requirement", "request dialog id", "completion requirement", "completion dialog id", "quest reward"],
+    [1, null, null, ["reputation", 2], 101, ["actor", 18]],
+    [2, null, null, ["reputation", 3], 201, ["actor", 8]],
+    [3, null, null, ["reputation", 4], 202, ["actor", 3]],
+    [4, ["reputation", 4], 301, ["weapon", {"material": 6, "weaponType": 6, "quantity": 1}], 302, ["actor", 4]],
+    [5, null, 401, ["weapon", {"quantity": 6, "value": 100}], 402, ["money", 1000]],
+    [6, ["quest", 5], null, null, 403, ["actor", 6]],
+    [7, null, null, null, 601, ["actor", 5]],
+    [8, null, 501, ["material", {"material": 7, "quantity": 10}], 502, ["material", {"Material":11, "quantity":6}]],
+    [9, ["quest", 8], null, null, 602, ["money", 2500]],
+    [10, ["quest", 9], null, ["reputation", 6], 603, ["actor", 7]],
+    [11, null, null, null, 701, ["actor", 11]]
+  ],
+  "Mapping": [
+    ["actor id", "dialogs", "quests"],
+    [1, [1], [1]],
+    [2, [1], [2, 3]],
+    [3, [2], [4]],
+    [4, [2], [5, 6]],
+    [5, [3], [8]],
+    [6, [3], [7, 9, 10]],
+    [7, [4], [11]],
+    [8, [5], []]
   ]
 }

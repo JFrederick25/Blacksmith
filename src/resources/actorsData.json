@@ -178,6 +178,19 @@
       28, "swamp troll", "npc", "dark forest",
       [],
       []
+    ],
+    [
+      29, "Hero supplier", "trader", "town",
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      30, "Hero captain", "npc", "town",
+      [],
+      []
     ]
   ]
 }
