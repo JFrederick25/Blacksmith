@@ -1,6 +1,16 @@
 <!--Dialog-->
 <div *ngIf="activeTrader.dialogs.length > 0">
-  Dialogs!
+  <div *ngFor="let dialog of activeTrader.dialogs"> {{dialog}} </div>
+</div>
+
+<div *ngIf="activeTrader.dialogs.length > 0">
+  <div *ngFor="let quest of activeTrader.quests">
+    {{quest.unlock}} <br>
+    {{quest.requestDialog}} <br>
+    <!-- {{quest.completion | json}} -->
+    {{quest.completionDialog}} <br>
+    <!-- {{quest.reward | json}} -->
+  </div>
 </div>
 
 <!--Materials-->
