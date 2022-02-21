@@ -4,25 +4,21 @@
       "4 materials [id, quantity]",
       "5 magic materials",
       "6 weapon designs [id ,price]",
-      "7 magic spells",
-      "8 dialogs"
+      "7 magic spells"
     ],
     [1, "Town Trader", "trader", "town", 
       [[1, 10], [2, 12], [3, 4], [4, 2], [5, 4], [6,3], [7, 2], [8,1]],
       [[1, 8]],
       [[3, 150], [4, 500]],
-      [[2, 1000], [3, 2200]],
-      []
+      [[2, 1000], [3, 2200]]
     ],
     [2, "Market Vender", "trader", "town", 
       [[3, 14], [6, 9], [8, 4], [11, 2]],
       [[4,4], [6,6]],
       [[5,1000], [6, 2000]],
-      [[4, 2600], [5, 3000]],
-      []
+      [[4, 2600], [5, 3000]]
     ],
     [3, "Noble Merchant", "trader", "town",
-      [],
       [],
       [],
       [],
@@ -32,11 +28,9 @@
       [],
       [],
       [],
-      [],
       []
     ],
     [5, "King's Treasurer", "trader", "castle",
-      [],
       [],
       [],
       [],
@@ -54,18 +48,15 @@
       [],
       [],
       [],
-      [],
       []
     ],
     [9, "Baracks Store", "trader", "Fort",
       [],
       [],
       [],
-      [],
       []
     ],
     [10, "Cave Explorer", "trader", "mountain",
-      [],
       [],
       [],
       [],
@@ -86,7 +77,6 @@
       [],
       [],
       [],
-      [],
       []
     ],
     [
@@ -96,7 +86,6 @@
     ],
     [
       15, "dragon's familiar", "trader", "mountain",
-      [],
       [],
       [],
       [],
@@ -111,12 +100,10 @@
       [],
       [],
       [],
-      [],
       []
     ],
     [
       18, "caravan trader", "trader", "forest camp",
-      [],
       [],
       [],
       [],
@@ -128,7 +115,6 @@
       []
     ],
     [20, "Monk trader", "trader", "forest camp",
-      [],
       [],
       [],
       [],
@@ -146,7 +132,6 @@
     ],
     [
       23, "elf blacksmith", "trader", "Avalone",
-      [],
       [],
       [],
       [],
@@ -171,7 +156,6 @@
       [],
       [],
       [],
-      [],
       []
     ],
     [
@@ -181,7 +165,6 @@
     ],
     [
       29, "Hero supplier", "trader", "town",
-      [],
       [],
       [],
       [],

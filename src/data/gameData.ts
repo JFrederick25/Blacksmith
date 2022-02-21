@@ -3,8 +3,9 @@ import * as materialGameData from '../resources/materialData.json';
 import * as weaponGameData from '../resources/weaponTypeData.json';
 import * as actorGameData from '../resources/actorsData.json';
 import * as magicGameData from '../resources/magicData.json';
+import * as dialogGameData from '../resources/dialogData.json';
 import { Magic, MagicMaterial, Material, PlayerMagicMaterial, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
-import { Npc, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
+import { Actor, Npc, Quest, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -12,6 +13,9 @@ export class GameData {
   static readonly actorsData = actorGameData.actors;
   static readonly magicData = magicGameData.magic;
   static readonly magicMaterialData = magicGameData.magicMaterials;
+  static readonly dialogData = dialogGameData.dialogs;
+  static readonly questData = dialogGameData.quests;
+  static readonly actorMappingData = dialogGameData.mapping;
 
   static resetPlayerData(p: PlayerData) {
     p.money = 30;
@@ -210,7 +214,24 @@ export class GameData {
         }
       }
 
-      // 8 is dialogs
+      // dialogs and quests
+      // map and build dialog and quest data to each actor
+      const actorMap = this.actorMappingData.find(map => map[0] === actor[0]);
+      if (actorMap) {
+        for(let dialogID of actorMap[1]) {
+          t.dialogs.push(GameData.dialogData.find(d => d[0] === dialogID));
+        }
+        for(let questID of actorMap[2]) {
+          const qData = GameData.questData.find(qd => qd[0] === questID);
+          const q = new Quest();
+          t.quests.push(q);
+          q.unlock = GameData.buildRequirement(qData[1]);
+          q.requestDialog = GameData.dialogData.find(d => d[0] === qData[2]);
+          q.completion = GameData.buildRequirement(qData[3]);
+          q.completionDialog = GameData.dialogData.find(d => d[0] === qData[4]);
+          q.reward = GameData.buildRequirement(qData[5]);
+        }
+      }
       return t;
     }
     return null;
@@ -224,6 +245,26 @@ export class GameData {
       n.role = actor[2] as string;
       n.location = actor[3] as string;
       return n;
+    }
+    return null;
+  }
+
+  static buildRequirement(req: {name: string, value: any}): any {
+    switch(req.name) {
+      case 'reputation':
+        return {reputation: req.value as number};
+      case 'money':
+        return {money: req.value as number};
+      case 'actor':
+        let actor: Actor = GameData.findTrader(req.value as number);
+        if (!actor) {
+          actor = GameData.findNpc(req.value as number);
+        }
+        return {actor};
+      case 'weapon':
+        return {weapon: req.value};
+      case 'material':
+        return {material: req.value};
     }
     return null;
   }

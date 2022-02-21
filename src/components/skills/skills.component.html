@@ -1,14 +1,14 @@
 <div *ngIf="!showSkill">
   <div class="title">Skills</div>
-  <div class="selection" (mouseover)="mover('crafting')" (click)="showSkill='crafting'">
+  <div class="selection" (mouseover)="mover('crafting')" (mouseleave)="mover(null)" (click)="showSkill='crafting'">
     <span *ngIf="x === 'crafting'; else not">⬗</span>
     Crafting Skills
   </div>
-  <div class="selection" (mouseover)="mover('trading')" (click)="showSkill='trading'">
+  <div class="selection" (mouseover)="mover('trading')" (mouseleave)="mover(null)" (click)="showSkill='trading'">
   <span *ngIf="x === 'trading'; else not">⬗</span>
     Trading Skills
   </div>
-  <div class="selection" (mouseover)="mover('magic')" (click)="showSkill='magic'">
+  <div class="selection" (mouseover)="mover('magic')" (mouseleave)="mover(null)" (click)="showSkill='magic'">
   <span *ngIf="x === 'magic'; else not">⬗</span>
   Magic Skills
 </div>

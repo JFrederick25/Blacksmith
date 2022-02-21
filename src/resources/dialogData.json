@@ -20,7 +20,7 @@
     [602, "The King thanks you for your service. Your reward is given."],
     [603, "The King has requested your presence. Please do not tarry long."],
     [701, "My soldiers stationed at the fort by the mountain could use your help."],
-    [801, ]
+    [801]
     
   ],
   "quests": [
@@ -37,7 +37,7 @@
     [10, ["quest", 9], null, ["reputation", 6], 603, ["actor", 7]],
     [11, null, null, null, 701, ["actor", 11]]
   ],
-  "Mapping": [
+  "mapping": [
     ["actor id", "dialogs", "quests"],
     [1, [1], [1]],
     [2, [1], [2, 3]],

@@ -62,12 +62,26 @@ export class TraderMagicSpell {
   }
 }
 
+export class Quest {
+  unlock: {name: string, value: any};
+  requestDialog: string;
+  completion: {name: string, value: any};
+  completionDialog: string;
+  reward: {name: string, value: any};
+
+  // the anys can be either:
+  // reputation: number, money: number, actor: Actor, weapon: FinishedWeapon, material: PlayerMaterial
+  // finished weapon properties: (material, weaponType, quantity, value)
+  // player material properties: (material, quantity)
+}
+
 export class Trader extends Actor {
   materials: TraderMaterial[];
   magicMaterials: TraderMagicMaterial[];
   weaponDesigns: TraderWeaponDesign[];
   magicSpells: TraderMagicSpell[];
-  dialog: string[];
+  dialogs: string[];
+  quests: Quest[];
 
   constructor() {
     super();
@@ -75,8 +89,18 @@ export class Trader extends Actor {
     this.magicMaterials = [];
     this.weaponDesigns = [];
     this.magicSpells = [];
-    this.dialog = [];
+    this.dialogs = [];
+    this.quests = [];
   }
 }
 
-export class Npc extends Actor {}
+export class Npc extends Actor {
+  dialogs: string[];
+  quests: Quest[];
+
+  constructor() {
+    super();
+    this.dialogs = [];
+    this.quests = [];
+  }
+}
