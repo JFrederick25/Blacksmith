@@ -218,18 +218,20 @@ export class GameData {
       // map and build dialog and quest data to each actor
       const actorMap = this.actorMappingData.find(map => map[0] === actor[0]);
       if (actorMap) {
-        for(let dialogID of actorMap[1]) {
-          t.dialogs.push(GameData.dialogData.find(d => d[0] === dialogID));
+        for(let dialogID of actorMap[1] as  number[]) {
+          t.dialogs.push(GameData.dialogData.find(d => d[0] === dialogID)[1] as string);
         }
-        for(let questID of actorMap[2]) {
+        for(let questID of actorMap[2] as number[]) {
           const qData = GameData.questData.find(qd => qd[0] === questID);
           const q = new Quest();
           t.quests.push(q);
-          q.unlock = GameData.buildRequirement(qData[1]);
-          q.requestDialog = GameData.dialogData.find(d => d[0] === qData[2]);
-          q.completion = GameData.buildRequirement(qData[3]);
-          q.completionDialog = GameData.dialogData.find(d => d[0] === qData[4]);
-          q.reward = GameData.buildRequirement(qData[5]);
+          q.unlock = GameData.buildRequirement(qData[1] as any[]);
+          const requestDialog = GameData.dialogData.find(d => d[0] === qData[2]);
+          q.requestDialog = requestDialog ? requestDialog[1] as string : null;
+          q.completion = GameData.buildRequirement(qData[3] as any[]);
+          const completionDialog = GameData.dialogData.find(d => d[0] === qData[4])
+          q.completionDialog = completionDialog ? completionDialog[1] as string : null;
+          q.reward = GameData.buildRequirement(qData[5] as any[]);
         }
       }
       return t;
@@ -249,22 +251,24 @@ export class GameData {
     return null;
   }
 
-  static buildRequirement(req: {name: string, value: any}): any {
-    switch(req.name) {
-      case 'reputation':
-        return {reputation: req.value as number};
-      case 'money':
-        return {money: req.value as number};
-      case 'actor':
-        let actor: Actor = GameData.findTrader(req.value as number);
-        if (!actor) {
-          actor = GameData.findNpc(req.value as number);
-        }
-        return {actor};
-      case 'weapon':
-        return {weapon: req.value};
-      case 'material':
-        return {material: req.value};
+  static buildRequirement(req: any[]): any {
+    if (req) {
+      switch(req[0]) {
+        case 'reputation':
+          return {reputation: req[1] as number};
+        case 'money':
+          return {money: req[1] as number};
+        case 'actor':
+          let actor: Actor = GameData.findTrader(req[1] as number);
+          if (!actor) {
+            actor = GameData.findNpc(req[1] as number);
+          }
+          return {actor};
+        case 'weapon':
+          return {weapon: req[1]};
+        case 'material':
+          return {material: req[1]};
+      }
     }
     return null;
   }

@@ -63,11 +63,11 @@ export class TraderMagicSpell {
 }
 
 export class Quest {
-  unlock: {name: string, value: any};
+  unlock: any;
   requestDialog: string;
-  completion: {name: string, value: any};
+  completion: any;
   completionDialog: string;
-  reward: {name: string, value: any};
+  reward: any;
 
   // the anys can be either:
   // reputation: number, money: number, actor: Actor, weapon: FinishedWeapon, material: PlayerMaterial
