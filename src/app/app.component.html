@@ -28,7 +28,7 @@
       <map [playerData]="playerData" [gameStateData]="gameStateData"></map>
     </div>
     <div *ngIf="gameStateData.selected === 'skills'">
-      <skills></skills>
+      <skills [playerData]="playerData"></skills>
     </div>
   </div>
 </div>

@@ -5,10 +5,13 @@
 
 <div *ngIf="activeTrader.dialogs.length > 0">
   <div *ngFor="let quest of activeTrader.quests">
-    {{quest.unlock}} <br>
-    {{quest.requestDialog}} <br>
+    <!-- {{quest.unlock}} -->
+    <div class="quest" *ngIf="checkQuestUnlock(quest)">{{quest.requestDialog}} </div>
     <!-- {{quest.completion | json}} -->
-    {{quest.completionDialog}} <br>
+    <div class="quest" *ngIf="checkQuestCompletion(quest) && !quest.accepted"> {{quest.completionDialog}} </div>
+    <div class="quest" *ngIf="checkQuestCompletion(quest) && !quest.accepted">
+      <button (click)="acceptReward(quest)"> Accept </button>
+    </div>
     <!-- {{quest.reward | json}} -->
   </div>
 </div>

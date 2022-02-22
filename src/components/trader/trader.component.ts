@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { GameData } from '../../data/gameData';
 import { PlayerMagicMaterial, PlayerMaterial } from '../../data/interfaces/craftingInterfaces';
-import { Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
+import { Actor, Npc, Quest, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 @Component({
@@ -13,6 +14,9 @@ export class TraderComponent implements OnInit {
   @Input() activeTraderName: string;
 
   activeTrader: Trader;
+
+  constructor(private cd: ChangeDetectorRef) {}
+
 
   ngOnInit(): void {
     this.activeTrader = this.playerData.traders.find(
@@ -117,5 +121,32 @@ export class TraderComponent implements OnInit {
       this.playerData.money -= weaponDesign.price;
       this.playerData.weaponTypes.push(weaponDesign.weapontype);
     }
+  }
+
+  checkQuestUnlock(quest: Quest): boolean {
+    return true;
+  }
+
+  checkQuestCompletion(quest: Quest): boolean {
+    if (!quest.completion) {
+      return true;
+    }
+
+    if (quest.completion) {
+      if (quest.completion.hasOwnProperty('reputation'))
+      return this.playerData.tradingSkills.reputation >= quest.completion['reputation'];
+    }
+  }
+
+  acceptReward(quest: Quest) {
+    if (quest.reward.hasOwnProperty('actor')) {
+      if (quest.reward['actor'].role === 'trader') {
+        this.playerData.traders.push(quest.reward['actor']);
+      } else {
+        this.playerData.npcs.push(quest.reward['actor']);
+      }
+    }
+    this.cd.detectChanges();
+    quest.accepted = true;
   }
 }

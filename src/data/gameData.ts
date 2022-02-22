@@ -6,6 +6,7 @@ import * as magicGameData from '../resources/magicData.json';
 import * as dialogGameData from '../resources/dialogData.json';
 import { Magic, MagicMaterial, Material, PlayerMagicMaterial, PlayerMaterial, WeaponType } from './interfaces/craftingInterfaces';
 import { Actor, Npc, Quest, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from './interfaces/traderInterfaces';
+import { CraftingSkills, MagicSkills, TradingSkills } from './interfaces/skillsInterfaces';
 
 export class GameData {
   static readonly materialData = materialGameData.materials;
@@ -86,7 +87,11 @@ export class GameData {
     p.npcs = [
       // GameData.findNpc(6), // king consort
       // GameData.findNpc(7), // the king
-    ]
+    ];
+
+    p.craftingSkills = new CraftingSkills();
+    p.tradingSkills = new TradingSkills();
+    p.magicSkills = new MagicSkills();
   }
 
 

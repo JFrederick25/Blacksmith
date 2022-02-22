@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PlayerData } from '../../data/playerData';
 
 @Component({
   selector: 'magic-skills',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ './magic-skills.component.css' ]
 })
 export class MagicSkillsComponent  {
-  
+  @Input() playerData: PlayerData;
 }

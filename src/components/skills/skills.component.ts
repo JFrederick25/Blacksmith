@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PlayerData } from '../../data/playerData';
 
 @Component({
   selector: 'skills',
@@ -6,6 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ './skills.component.css' ]
 })
 export class SkillsComponent  {
+  @Input() playerData: PlayerData;
+
   showSkill = '';
   x;
   mover(opt) {

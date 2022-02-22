@@ -68,6 +68,7 @@ export class Quest {
   completion: any;
   completionDialog: string;
   reward: any;
+  accepted: boolean = false;
 
   // the anys can be either:
   // reputation: number, money: number, actor: Actor, weapon: FinishedWeapon, material: PlayerMaterial

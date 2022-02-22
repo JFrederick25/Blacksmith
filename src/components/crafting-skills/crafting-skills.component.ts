@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PlayerData } from '../../data/playerData';
 
 @Component({
   selector: 'crafting-skills',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ './crafting-skills.component.css' ]
 })
 export class CraftingSkillsComponent  {
-  
+  @Input() playerData: PlayerData;
 }

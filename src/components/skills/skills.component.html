@@ -19,21 +19,21 @@
     <div class="title">
     <span class="back" (click)="showSkill=''">&#8678;</span>
     Crafting Skills</div>
-    <crafting-skills></crafting-skills>
+    <crafting-skills [playerData]="playerData"></crafting-skills>
   </div>
   
   <div *ngIf="showSkill==='trading'">
     <div class="title">
     <span class="back" (click)="showSkill=''">&#8678;</span>
     Trading Skills</div>
-    <trading-skills></trading-skills>
+    <trading-skills [playerData]="playerData"></trading-skills>
   </div>
 
   <div *ngIf="showSkill==='magic'">
     <div class="title">
     <span class="back" (click)="showSkill=''">&#8678;</span>
     Magic Skills</div>
-    <magic-skills></magic-skills>
+    <magic-skills [playerData]="playerData"></magic-skills>
   </div>
 </div>
 

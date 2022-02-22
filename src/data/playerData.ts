@@ -5,6 +5,7 @@ import {
   PlayerMaterial,
   WeaponType,
 } from './interfaces/craftingInterfaces';
+import { CraftingSkills, MagicSkills, TradingSkills } from './interfaces/skillsInterfaces';
 import { Npc, Trader } from './interfaces/traderInterfaces';
 
 export class PlayerData {
@@ -19,6 +20,11 @@ export class PlayerData {
   // trader interfaces
   traders: Trader[];
   npcs: Npc[];
+
+  // skills interfaces
+  craftingSkills: CraftingSkills;
+  tradingSkills: TradingSkills;
+  magicSkills: MagicSkills
 
   constructor() {
     this.money = 0;
