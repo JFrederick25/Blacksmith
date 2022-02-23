@@ -122,6 +122,7 @@ export class TraderComponent implements OnInit {
   }
 
   checkQuestUnlock(quest: Quest): boolean {
+    // if unlock === 'quest', get quests from active trader, check if quest by id is complete
     return true;
   }
 

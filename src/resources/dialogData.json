@@ -8,7 +8,7 @@
     [5, "The mines are a unforgining type. Watcha need?"],
     [101, "There's a caravan trader that passes by a forest camp. They often have goods from other lands."],
     [102, "Come back when I know ya better."],
-    [201, "There's a trader from a mine in the mountains. They sell quality ores."],
+    [201, "There's a trader in the mountains that sells quality ores from the mines there."],
     [202, "Do you know the Noble Merchant? He has high quality goods for sale."],
     [203, "I really don't know you that well."],
     [301, "Sell me a steel sword, and I will recommend your work to the Knight's Guild."],
@@ -22,7 +22,7 @@
     [602, "The King thanks you for your service. Your reward is given."],
     [603, "The King has requested your presence. Please do not tarry long."],
     [701, "My soldiers stationed at the fort by the mountain could use your help."],
-    [801]
+    [801, ""]
     
   ],
   "quests": [

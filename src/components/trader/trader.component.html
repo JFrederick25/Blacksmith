@@ -10,15 +10,15 @@
     <span *ngIf="showQuests">&#9207;</span>
   </div>
   <div *ngIf="showQuests">
+    <hr>
     <div *ngFor="let quest of activeTrader.quests">
-      <hr>
-      <div class="quest" *ngIf="checkQuestUnlock(quest)">{{quest.requestDialog}} </div>
+      <div class="quest" *ngIf="checkQuestUnlock(quest) && !checkQuestCompletion(quest)">{{quest.requestDialog}} </div>
       <div class="quest" *ngIf="checkQuestCompletion(quest) && !quest.accepted"> {{quest.completionDialog}} </div>
       <div class="quest" *ngIf="checkQuestCompletion(quest) && !quest.accepted">
         <button (click)="acceptReward(quest)"> Accept </button>
       </div>
-      <hr>
     </div>
+    <hr>
   </div>
 </div>
 

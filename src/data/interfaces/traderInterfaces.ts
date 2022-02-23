@@ -63,6 +63,7 @@ export class TraderMagicSpell {
 }
 
 export class Quest {
+  id: number;
   unlock: any;
   requestDialog: string;
   completion: any;

@@ -230,6 +230,7 @@ export class GameData {
           const qData = GameData.questData.find(qd => qd[0] === questID);
           const q = new Quest();
           t.quests.push(q);
+          q.id = qData[0] as number;
           q.unlock = GameData.buildRequirement(qData[1] as any[]);
           const requestDialog = GameData.dialogData.find(d => d[0] === qData[2]);
           q.requestDialog = requestDialog ? requestDialog[1] as string : null;
