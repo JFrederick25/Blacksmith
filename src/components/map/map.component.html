@@ -39,10 +39,10 @@
   </div>
   <trader
     *ngIf="selectedActor.role === 'trader'" 
-    [playerData]="_playerData" 
+    [playerData]="playerData"
     [activeTraderName]="selectedActor.name"></trader>
   <npc
     *ngIf="selectedActor.role === 'npc'"
-    [playerData]="_playerData"
+    [playerData]="playerData"
     [activeTraderName]="selectedActor.name"></npc>
 </div>

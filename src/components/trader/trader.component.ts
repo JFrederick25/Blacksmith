@@ -1,7 +1,6 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { GameData } from '../../data/gameData';
+import { Component, Input, OnInit } from '@angular/core';
 import { PlayerMagicMaterial, PlayerMaterial } from '../../data/interfaces/craftingInterfaces';
-import { Actor, Npc, Quest, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
+import { Quest, Trader, TraderMagicMaterial, TraderMagicSpell, TraderMaterial, TraderWeaponDesign } from '../../data/interfaces/traderInterfaces';
 import { PlayerData } from '../../data/playerData';
 
 @Component({
@@ -15,15 +14,13 @@ export class TraderComponent implements OnInit {
 
   activeTrader: Trader;
 
-  constructor(private cd: ChangeDetectorRef) {}
-
-
   ngOnInit(): void {
     this.activeTrader = this.playerData.traders.find(
       (x) => x.name === this.activeTraderName
     );
   }
   
+  showQuests: boolean = true;
   showMaterials: boolean;
   showMagicMaterials: boolean;
   showWeaponDesigns: boolean;
@@ -40,6 +37,7 @@ export class TraderComponent implements OnInit {
   }
 
   setShowOption(option: string) {
+    this.showQuests = option === 'quests' ? !this.showQuests : false;
     this.showMaterials = option === 'materials' ? !this.showMaterials : false;
     this.showMagicMaterials = option === 'magicMaterials' ? !this.showMagicMaterials : false;
     this.showWeaponDesigns = option === 'weaponDesigns' ? !this.showWeaponDesigns : false;
@@ -146,7 +144,6 @@ export class TraderComponent implements OnInit {
         this.playerData.npcs.push(quest.reward['actor']);
       }
     }
-    this.cd.detectChanges();
     quest.accepted = true;
   }
 }

@@ -11,17 +11,14 @@ import { chunk } from '../../resources/utils/helper';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent {
-  @Input() set playerData(player: PlayerData) {
-    const traders = player.traders;
-    const npcs = player.npcs;
-    this._locations = uniq(concat(traders, npcs).map((p) => p.location));
-    this._playerData = player;
-  }
-
+  @Input() playerData: PlayerData;
   @Input() gameStateData: GameStateData;
 
-  _playerData: PlayerData;
-  _locations: string[];
+  get _locations(): string[] {
+      const traders = this.playerData.traders;
+    const npcs = this.playerData.npcs;
+    return uniq(concat(traders, npcs).map((p) => p.location));
+  }
 
   selectedLocation: string;
   selectedActor: Actor;
@@ -38,10 +35,10 @@ export class MapComponent {
     if (this.selectedActor === actor) {
       this.selectedActor = null;
     } else {
-      const traders = this._playerData.traders.filter(
+      const traders = this.playerData.traders.filter(
         (t) => t.location === this.selectedLocation
       );
-      const npcs = this._playerData.npcs.filter(
+      const npcs = this.playerData.npcs.filter(
         (t) => t.location === this.selectedLocation
       );
       const foundActor = concat(traders, npcs).find((a) => a === actor);
@@ -54,10 +51,10 @@ export class MapComponent {
   }
 
   getActorRow(): Actor[][] {
-    const traders = this._playerData.traders.filter(
+    const traders = this.playerData.traders.filter(
       (t) => t.location === this.selectedLocation
     );
-    const npcs = this._playerData.npcs.filter(
+    const npcs = this.playerData.npcs.filter(
       (t) => t.location === this.selectedLocation
     );
     return chunk(concat(traders, npcs), 3);
