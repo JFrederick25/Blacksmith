@@ -34,6 +34,12 @@
   margin: 5px 10px 5px;
 }
 
+.buildMessage {
+  padding: 10px;
+  background-color: aquamarine;
+  font-size: larger;
+}
+
 .chevronButton {
   cursor: pointer;
   padding-left: 10px;

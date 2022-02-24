@@ -7,3 +7,10 @@
 .selection:hover {
   background-color: aquamarine;
 }
+
+.gameMessage {
+  font-size: large;
+  background-color: aquamarine;
+  padding: 10px;
+  padding-left: 36px;
+} 

@@ -19,6 +19,8 @@ export class ForgeComponent {
   showWeapons: boolean = false;
   showMagic: boolean = false;
 
+  buildMessage: string = null;
+
   setShowOption(option: string) {
     this.showMaterials = option === 'materials' ? !this.showMaterials : false;
     this.showWeapons = option === 'weapons' ? !this.showWeapons : false;
@@ -87,6 +89,9 @@ export class ForgeComponent {
       this.selectedMagic = null;
       
       this.setShowOption(null);
+
+      this.buildMessage = 'Success!';
+      setTimeout(() => this.buildMessage = '', 3000);
     }
   }
 

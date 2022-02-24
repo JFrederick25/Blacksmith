@@ -86,3 +86,5 @@
   </div>
   <button class="buildButton" (click)="buildWeapon()">Build Weapon</button>
 </div>
+
+<h3 *ngIf="buildMessage" class="buildMessage">{{buildMessage}}</h3>
