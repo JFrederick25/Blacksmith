@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { GameStateData } from '../data/gameStateData';
 import { PlayerData } from '../data/playerData';
 
@@ -11,9 +11,16 @@ export class AppComponent {
   playerData: PlayerData = new PlayerData();
   gameStateData: GameStateData = new GameStateData();
 
+  @HostListener('document:keypress', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) { 
+    if (event.key === 'p') {
+      console.log(navigator.userAgent);
+    }
+  }
+
   developerTool(event: any) {
     if (event.ctrlKey) {
-      this.playerData.money += 10000;
+      this.playerData.money += 10000;      
     }
   }
 }
